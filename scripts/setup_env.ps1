@@ -1,25 +1,26 @@
 # GraphSentinel environment setup (Windows PowerShell).
-# Usage (from repo root):  powershell -ExecutionPolicy Bypass -File scripts\setup_env.ps1
-# Creates .venv on Python 3.12 (better PyTorch/PyG wheel coverage than 3.14), installs
-# requirements.txt and freezes exact versions to requirements-lock.txt.
-
+# Usage (from repo root):  powershell -ExecutionPolicy Bypass -File scripts\setup_env.ps1 [-Cpu]
+# Creates .venv on Python 3.12, installs PyTorch (CUDA 12.6 wheels unless -Cpu), then requirements.txt,
+# freezes exact versions to requirements-lock.txt, and installs the frontend's npm packages if npm exists.
+param([switch]$Cpu)
 $ErrorActionPreference = "Stop"
 $PyVersion = "3.12"
+$Py = ".venv\Scripts\python.exe"
 
-if (Get-Command uv -ErrorAction SilentlyContinue) {
-    Write-Host "Using uv to create .venv with Python $PyVersion"
-    uv python install $PyVersion
-    uv venv .venv --python $PyVersion
-    uv pip install --python .venv\Scripts\python.exe -r requirements.txt
-    uv pip freeze --python .venv\Scripts\python.exe | Out-File -Encoding utf8 requirements-lock.txt
+if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
+    throw "uv not found. Install it (https://docs.astral.sh/uv/) or create .venv with Python $PyVersion manually."
 }
-else {
-    Write-Host "uv not found; falling back to the py launcher (needs Python $PyVersion installed)"
-    py -$PyVersion -m venv .venv
-    .venv\Scripts\python.exe -m pip install --upgrade pip
-    .venv\Scripts\python.exe -m pip install -r requirements.txt
-    .venv\Scripts\python.exe -m pip freeze | Out-File -Encoding utf8 requirements-lock.txt
-}
+uv python install $PyVersion
+if (-not (Test-Path $Py)) { uv venv .venv --python $PyVersion }
+if ($Cpu) { uv pip install --python $Py torch }
+else { uv pip install --python $Py torch --index-url https://download.pytorch.org/whl/cu126 }
+uv pip install --python $Py -r requirements.txt
+uv pip freeze --python $Py | Out-File -Encoding utf8 requirements-lock.txt
 
-.venv\Scripts\python.exe -m src.utils.env_info
+& $Py -c "import torch; print('torch', torch.__version__, 'CUDA available:', torch.cuda.is_available())"
+& $Py -m src.utils.env_info | Out-Null
+
+if (Get-Command npm -ErrorAction SilentlyContinue) {
+    Push-Location frontend; npm install --no-audit --no-fund; Pop-Location
+} else { Write-Host "npm not found: install Node.js 20+ to build the dashboard" }
 Write-Host "Done. Activate with:  .venv\Scripts\Activate.ps1"

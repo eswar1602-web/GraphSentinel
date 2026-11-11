@@ -2,6 +2,7 @@
 data/raw/*
 data/processed/*
 data/graphs/*
+data/samples/
 !data/**/.gitkeep
 models/**/*
 !models/**/.gitkeep
@@ -14,6 +15,7 @@ models/**/*
 
 # --- Transient run logs ---
 reports/**/*_stdout.txt
+experiments/logs/
 
 # --- Secrets ---
 .env

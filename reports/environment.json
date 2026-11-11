@@ -10,11 +10,13 @@
     "scikit-learn": "1.9.1",
     "pyyaml": "6.0.3",
     "pytest": "9.2.0",
-    "xgboost": null,
-    "torch": null,
-    "torch_geometric": null,
-    "networkx": null,
-    "fastapi": null
+    "xgboost": "3.4.1",
+    "torch": "2.14.1+cu126",
+    "torch_geometric": "2.8.1",
+    "networkx": "3.7",
+    "fastapi": "0.162.4"
   },
-  "gpu_nvidia_smi": "NVIDIA GeForce RTX 3050 Laptop GPU, 581.57, 4096 MiB"
+  "gpu_nvidia_smi": "NVIDIA GeForce RTX 3050 Laptop GPU, 581.57, 4096 MiB",
+  "torch_cuda_available": true,
+  "torch_cuda_version": "12.6"
 }
