@@ -1,0 +1,26 @@
+# Milestone 2: Random Forest and XGBoost baselines (contract v1.1). Results: experiments/results/baselines/.
+processed_dir: data/processed/v1
+results_dir: experiments/results/baselines
+models_dir: models/traditional
+seeds: [0, 1, 2]                       # final evaluation seeds (mean ± std); tuning uses seeds[0]
+train_sample:
+  cap_per_fine_label: 150000           # deterministic seeded class-capped subsample of TRAIN for fitting (16 GB RAM)
+class_weighting: sqrt_balanced         # w_c = sqrt(n_max / n_c) on the fitting sample
+experiments:
+  - {name: primary_family_default, scheme: primary, target: family, feature_set: default}
+  - {name: primary_family_dstport, scheme: primary, target: family, feature_set: dstport}      # E-PS1 headline
+  - {name: dayholdout_binary_default, scheme: dayholdout, target: binary, feature_set: default}  # generalization
+  - {name: dayholdout_binary_dstport, scheme: dayholdout, target: binary, feature_set: dstport}
+  - {name: primary_family_default_dominant_pair_ablation, scheme: primary, target: family, feature_set: default,
+     exclude_dominant_pair: true, seeds: [0]}                                                   # contract §6.5 view 4
+models:
+  random_forest:
+    grid:
+      - {n_estimators: 100, max_depth: 20, min_samples_leaf: 1, max_features: sqrt}
+      - {n_estimators: 100, max_depth: null, min_samples_leaf: 2, max_features: sqrt}
+  xgboost:
+    grid:
+      - {n_estimators: 400, max_depth: 6, learning_rate: 0.1, subsample: 0.8, colsample_bytree: 0.8}
+      - {n_estimators: 400, max_depth: 10, learning_rate: 0.1, subsample: 0.8, colsample_bytree: 0.8}
+    early_stopping_rounds: 30
+    device: auto                       # cuda if available, else cpu
