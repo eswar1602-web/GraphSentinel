@@ -1,0 +1,22 @@
+# GraphSentinel global configuration.
+# Milestone 1 covers: paths, seed, raw-data audit.
+# The preprocessing/split section is added only after the dataset contract is approved.
+
+seed: 42
+
+paths:
+  raw_dir: data/raw/CICIDS2017
+  # "GeneratedLabelledFlows" zip extracts to TrafficLabelling/ (has Flow ID, IPs, Timestamp; needed for graphs)
+  traffic_labelling_dir: data/raw/CICIDS2017/TrafficLabelling
+  # "MachineLearningCSV" zip extracts to MachineLearningCVE/ (no identities; optional, for cross-check only)
+  ml_cve_dir: data/raw/CICIDS2017/MachineLearningCVE
+  processed_dir: data/processed
+  reports_dir: reports
+
+audit:
+  # Encodings tried in order when decoding raw CSVs.
+  encodings: [utf-8-sig, cp1252]
+  # Columns treated as identity/metadata (never as model features). Names after whitespace stripping.
+  identity_columns: ["Flow ID", "Source IP", "Source Port", "Destination IP", "Timestamp"]
+  label_column: Label
+  top_k: 15

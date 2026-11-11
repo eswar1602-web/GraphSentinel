@@ -1,0 +1,35 @@
+# Headline experiment E-PS1: PortScan detection with vs without Destination Port (contract v1.0 §4.1, §1.2; decision D2).
+# Specification only. It is executed in Milestones 2, 4, 6 and 7; no results exist yet.
+id: E-PS1
+question: >
+  How much of PortScan detectability comes from Destination Port, and does the gain hold beyond the
+  dominant NAT pair and under identity aggregation?
+data:
+  processed: data/processed/v1
+  scheme: primary                     # multiclass target: label_family; per-class reporting includes PortScan
+  feature_sets: [default, dstport]    # default excludes Destination Port (still the project default)
+models:
+  - random_forest                     # Milestone 2
+  - xgboost                           # Milestone 2
+  - graphsage                         # Milestone 4 (standard and identity-free variants, contract §6.5)
+aggregation_conditions:               # Milestone 6; merge_factor 1 is the native_identity_baseline, not "unaggregated"
+  - native_identity_baseline          # merge_factor 1
+  - merge_factor: [2, 4, 8, 16, 32]   # additional synthetic aggregation (graph models; tabular models unaffected by design)
+seeds: [0, 1, 2, 3, 4]                # report mean ± std
+report:
+  per_class: [precision, recall, f1, support]
+  aggregate: [macro_f1, fpr]
+  confusion_matrices: true            # one per model × feature set (× aggregation level for graph models)
+  portscan_focus: [precision, recall, f1, confusion_row_and_column]
+  mandatory_views:                    # contract §6.5
+    - overall
+    - per_attack_recall_off_dominant_pair
+    - identity_free_gnn
+    - dominant_vs_non_dominant_pair   # plus the dominant-pair ablation, where PortScan becomes "not evaluable"
+  feature_collisions:                 # exact counts produced by preprocessing, quoted next to results
+    global: data/processed/v1/dataset_stats.json#label_collisions
+    train_to_eval: data/processed/v1/schemes/primary/feature_collisions.json
+interpretation_rules:
+  - Destination Port is a legitimate flow feature, but in CICIDS2017 it can encode dataset-specific attack signatures (fixed scanner/victim ports).
+  - A higher with-port score is NOT evidence of better generalization unless it holds off the dominant pair, under the day-holdout split and under aggregation.
+  - Report negative or null differences as found.

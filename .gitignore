@@ -1,0 +1,51 @@
+# --- Data & artifacts (never commit) ---
+data/raw/*
+data/processed/*
+data/graphs/*
+!data/**/.gitkeep
+models/**/*
+!models/**/.gitkeep
+*.parquet
+*.pt
+*.pkl
+*.joblib
+*.zip
+*.pcap
+
+# --- Transient run logs ---
+reports/**/*_stdout.txt
+
+# --- Secrets ---
+.env
+.env.*
+keys/
+*.key
+*.pem
+secrets/
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# --- Frontend ---
+frontend/node_modules/
+frontend/dist/
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+
+# --- Databases ---
+*.sqlite
+*.sqlite3
+*.db

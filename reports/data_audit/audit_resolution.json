@@ -1,0 +1,6052 @@
+{
+  "raw_dir": "data\\raw\\CICIDS2017\\TrafficLabelling",
+  "files": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 225746,
+        "crlf_lines": 0,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 225746
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 225745,
+          "equal": 225745,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 97718,
+          "DDoS": 128027
+        }
+      },
+      "pandas_rows_including_empty": 225745,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 2,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 2,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-12000000.0": 2
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 2,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 2
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 2,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 2
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 2,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 2
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 108,
+          "rows_with_nonneg_duration": 106,
+          "distinct_values_top": {
+            "-1.0": 104,
+            "-2.0": 2,
+            "-12.0": 1,
+            "-3.0": 1
+          }
+        },
+        "Fwd IAT Min": {
+          "rows": 6,
+          "rows_with_nonneg_duration": 6,
+          "distinct_values_top": {
+            "-1.0": 5,
+            "-12.0": 1
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 32925,
+          "distinct_values": {
+            "-1.0": 32925
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 88299,
+          "distinct_values": {
+            "-1.0": 88299
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "exact_duplicates": {
+        "extra_copies": 2,
+        "rows_involved": 4,
+        "by_label": {
+          "BENIGN": 2
+        },
+        "adjacent_to_identical_row": 2,
+        "examples": [
+          {
+            "flow_uid": "Friday-WorkingHours-Afternoon-DDos:17644",
+            "flow_id": "192.168.10.25-192.168.10.50-53615-6756-6",
+            "timestamp": "7/7/2017 3:53",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Friday-WorkingHours-Afternoon-DDos:59709",
+            "flow_id": "192.168.10.25-192.168.10.50-53631-20878-6",
+            "timestamp": "7/7/2017 4:00",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 225745,
+        "unique_flow_ids": 86421,
+        "rows_with_repeated_flow_id": 202584,
+        "flow_ids_repeated": 63260,
+        "max_rows_per_flow_id": 44,
+        "rows_src_not_first_ip_in_flow_id": 76992,
+        "flow_ids_seen_in_both_directions": 28585,
+        "rows_sharing_flow_id_and_timestamp": 150937,
+        "flow_ids_with_multiple_labels": 20055,
+        "multi_label_flow_id_label_combos": [
+          [
+            "BENIGN | DDoS",
+            20055
+          ]
+        ]
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            7,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          3,
+          4,
+          5
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "7/7/2017 3:30",
+          "22574": "7/7/2017 3:57",
+          "56436": "7/7/2017 4:00",
+          "112872": "7/7/2017 4:06",
+          "169308": "7/7/2017 4:13",
+          "203170": "7/7/2017 4:23",
+          "225744": "7/7/2017 5:02"
+        },
+        "raw_range": [
+          "03:30",
+          "05:02"
+        ],
+        "corrected_range": [
+          "15:30",
+          "17:02"
+        ],
+        "backward_jump_fraction_raw": 0.0,
+        "backward_jump_fraction_corrected": 0.0,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 97718,
+            "raw": [
+              "03:30",
+              "05:02"
+            ],
+            "corrected": [
+              "15:30",
+              "17:02"
+            ]
+          },
+          "DDoS": {
+            "rows": 128027,
+            "raw": [
+              "03:56",
+              "04:16"
+            ],
+            "corrected": [
+              "15:56",
+              "16:16"
+            ],
+            "published": [
+              "15:56",
+              "16:16"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 0.0,
+            "day_matches": true
+          }
+        }
+      }
+    },
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 286468,
+        "crlf_lines": 286468,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 286468
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 286467,
+          "equal": 286467,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 127537,
+          "PortScan": 158930
+        }
+      },
+      "pandas_rows_including_empty": 286467,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 36,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 36,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-6000000.0": 15,
+            "-8000000.0": 13,
+            "-12000000.0": 4,
+            "-193000000.0": 1,
+            "-666666.6667": 1
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 36,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 33,
+            "-166666.6667": 1,
+            "-153846.1538": 1,
+            "-1000000.0": 1
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 36,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 33,
+            "-12.0": 1,
+            "-13.0": 1,
+            "-2.0": 1
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 36,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 33,
+            "-12.0": 1,
+            "-13.0": 1,
+            "-2.0": 1
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 176,
+          "rows_with_nonneg_duration": 140,
+          "distinct_values_top": {
+            "-1.0": 168,
+            "-13.0": 2,
+            "-2.0": 2,
+            "-3.0": 1,
+            "-10.0": 1
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 60210,
+          "distinct_values": {
+            "-1.0": 60210
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 76942,
+          "distinct_values": {
+            "-1.0": 76942
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "exact_duplicates": {
+        "extra_copies": 1,
+        "rows_involved": 2,
+        "by_label": {
+          "BENIGN": 1
+        },
+        "adjacent_to_identical_row": 0,
+        "examples": [
+          {
+            "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:268520",
+            "flow_id": "192.168.10.25-192.168.10.50-53461-6328-6",
+            "timestamp": "7/7/2017 3:22",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 286467,
+        "unique_flow_ids": 229683,
+        "rows_with_repeated_flow_id": 91551,
+        "flow_ids_repeated": 34767,
+        "max_rows_per_flow_id": 73,
+        "rows_src_not_first_ip_in_flow_id": 89064,
+        "flow_ids_seen_in_both_directions": 19164,
+        "rows_sharing_flow_id_and_timestamp": 41165,
+        "flow_ids_with_multiple_labels": 130,
+        "multi_label_flow_id_label_combos": [
+          [
+            "BENIGN | PortScan",
+            130
+          ]
+        ]
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            7,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          1,
+          2,
+          3
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "7/7/2017 1:00",
+          "28647": "7/7/2017 1:41",
+          "71616": "7/7/2017 2:30",
+          "143233": "7/7/2017 2:53",
+          "214850": "7/7/2017 2:55",
+          "257819": "7/7/2017 3:12",
+          "286466": "7/7/2017 3:29"
+        },
+        "raw_range": [
+          "01:00",
+          "03:29"
+        ],
+        "corrected_range": [
+          "13:00",
+          "15:29"
+        ],
+        "backward_jump_fraction_raw": 0.0,
+        "backward_jump_fraction_corrected": 0.0,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 127537,
+            "raw": [
+              "01:00",
+              "03:29"
+            ],
+            "corrected": [
+              "13:00",
+              "15:29"
+            ]
+          },
+          "PortScan": {
+            "rows": 158930,
+            "raw": [
+              "01:05",
+              "03:23"
+            ],
+            "corrected": [
+              "13:05",
+              "15:23"
+            ],
+            "published": [
+              "13:55",
+              "15:29"
+            ],
+            "corrected_rows_within_published_pm5min": 0.9999559554520858,
+            "raw_rows_within_published_pm5min": 0.0,
+            "day_matches": true
+          }
+        }
+      }
+    },
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 191034,
+        "crlf_lines": 191034,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 191034
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 191033,
+          "equal": 191033,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 189067,
+          "Bot": 1966
+        }
+      },
+      "pandas_rows_including_empty": 191033,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 9,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 8,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-12000000.0": 7,
+            "-1000000.0": 1
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 9,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 8,
+            "-166666.6667": 1
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 9,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 8,
+            "-12.0": 1
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 9,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 8,
+            "-12.0": 1
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 225,
+          "rows_with_nonneg_duration": 216,
+          "distinct_values_top": {
+            "-1.0": 209,
+            "-4.0": 5,
+            "-2.0": 4,
+            "-12.0": 2,
+            "-3.0": 2
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 95834,
+          "distinct_values": {
+            "-1.0": 95834
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 118419,
+          "distinct_values": {
+            "-1.0": 118419
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 2,
+        "rows": 10,
+        "rows_by_label": {
+          "Bot": 8,
+          "BENIGN": 2
+        },
+        "label_combinations": [
+          [
+            "BENIGN | Bot",
+            2
+          ]
+        ],
+        "largest_groups": [
+          {
+            "hash": "960e539307cbe201",
+            "rows": 8,
+            "labels": {
+              "Bot": 7,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 52173.0,
+              "Protocol": 6.0,
+              "Flow Duration": 31.0,
+              "Total Fwd Packets": 1.0,
+              "Total Backward Packets": 1.0,
+              "Total Length of Fwd Packets": 6.0,
+              "Total Length of Bwd Packets": 6.0,
+              "Init_Win_bytes_forward": 237.0,
+              "Init_Win_bytes_backward": 256.0
+            },
+            "timestamps": [
+              "7/7/2017 10:09",
+              "7/7/2017 10:29",
+              "7/7/2017 10:35",
+              "7/7/2017 10:39",
+              "7/7/2017 10:46",
+              "7/7/2017 10:49"
+            ],
+            "src_dst_top": {
+              "205.174.165.73 -> 192.168.10.15": 7,
+              "216.52.31.73 -> 192.168.10.5": 1
+            },
+            "flow_uids_sample": [
+              "64059",
+              "95145",
+              "104183",
+              "108042",
+              "113098"
+            ]
+          },
+          {
+            "hash": "01efc3ebfb215943",
+            "rows": 2,
+            "labels": {
+              "BENIGN": 1,
+              "Bot": 1
+            },
+            "feature_values": {
+              "Destination Port": 50869.0,
+              "Protocol": 6.0,
+              "Flow Duration": 55.0,
+              "Total Fwd Packets": 1.0,
+              "Total Backward Packets": 1.0,
+              "Total Length of Fwd Packets": 6.0,
+              "Total Length of Bwd Packets": 6.0,
+              "Init_Win_bytes_forward": 237.0,
+              "Init_Win_bytes_backward": 256.0
+            },
+            "timestamps": [
+              "7/7/2017 10:27",
+              "7/7/2017 9:59"
+            ],
+            "src_dst_top": {
+              "8.254.250.206 -> 192.168.10.14": 1,
+              "205.174.165.73 -> 192.168.10.14": 1
+            },
+            "flow_uids_sample": [
+              "49707",
+              "90664"
+            ]
+          }
+        ]
+      },
+      "exact_duplicates": {
+        "extra_copies": 2,
+        "rows_involved": 4,
+        "by_label": {
+          "BENIGN": 2
+        },
+        "adjacent_to_identical_row": 0,
+        "examples": [
+          {
+            "flow_uid": "Friday-WorkingHours-Morning:154538",
+            "flow_id": "192.168.10.25-192.168.10.50-51807-16028-6",
+            "timestamp": "7/7/2017 11:32",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Friday-WorkingHours-Morning:176757",
+            "flow_id": "192.168.10.25-192.168.10.50-52265-44410-6",
+            "timestamp": "7/7/2017 11:59",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 191033,
+        "unique_flow_ids": 101977,
+        "rows_with_repeated_flow_id": 139209,
+        "flow_ids_repeated": 50153,
+        "max_rows_per_flow_id": 116,
+        "rows_src_not_first_ip_in_flow_id": 135526,
+        "flow_ids_seen_in_both_directions": 28394,
+        "rows_sharing_flow_id_and_timestamp": 58694,
+        "flow_ids_with_multiple_labels": 0,
+        "multi_label_flow_id_label_combos": []
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            7,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "7/7/2017 8:59",
+          "19103": "7/7/2017 9:27",
+          "47758": "7/7/2017 9:58",
+          "95516": "7/7/2017 10:30",
+          "143274": "7/7/2017 11:23",
+          "171929": "7/7/2017 11:54",
+          "191032": "7/7/2017 12:59"
+        },
+        "raw_range": [
+          "08:59",
+          "12:59"
+        ],
+        "corrected_range": [
+          "08:59",
+          "12:59"
+        ],
+        "backward_jump_fraction_raw": 0.0,
+        "backward_jump_fraction_corrected": 0.0,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 189067,
+            "raw": [
+              "08:59",
+              "12:59"
+            ],
+            "corrected": [
+              "08:59",
+              "12:59"
+            ]
+          },
+          "Bot": {
+            "rows": 1966,
+            "raw": [
+              "09:34",
+              "12:59"
+            ],
+            "corrected": [
+              "09:34",
+              "12:59"
+            ],
+            "published": [
+              "10:02",
+              "11:02"
+            ],
+            "corrected_rows_within_published_pm5min": 0.7594099694811801,
+            "raw_rows_within_published_pm5min": 0.7594099694811801,
+            "day_matches": true
+          }
+        }
+      }
+    },
+    "Monday-WorkingHours.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 529919,
+        "crlf_lines": 0,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 529919
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 529918,
+          "equal": 529918,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 529918
+        }
+      },
+      "pandas_rows_including_empty": 529918,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 15,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 9,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-12000000.0": 9
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 15,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 15
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 15,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 15
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 15,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 15
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 512,
+          "rows_with_nonneg_duration": 497,
+          "distinct_values_top": {
+            "-1.0": 489,
+            "-12.0": 7,
+            "-11.0": 4,
+            "-5.0": 3,
+            "-13.0": 3
+          }
+        },
+        "Fwd Header Length": {
+          "rows": 23,
+          "rows_with_nonneg_duration": 23,
+          "distinct_values_top": {
+            "-167770490.0": 3,
+            "-83885125.0": 3,
+            "-167770494.0": 2,
+            "-1929349973.0": 1,
+            "-83885093.0": 1
+          }
+        },
+        "Bwd Header Length": {
+          "rows": 17,
+          "rows_with_nonneg_duration": 17,
+          "distinct_values_top": {
+            "-83885125.0": 2,
+            "-167770490.0": 2,
+            "-83885181.0": 2,
+            "-83885113.0": 1,
+            "-167770470.0": 1
+          }
+        },
+        "Fwd Header Length.1": {
+          "rows": 23,
+          "rows_with_nonneg_duration": 23,
+          "distinct_values_top": {
+            "-167770490.0": 3,
+            "-83885125.0": 3,
+            "-167770494.0": 2,
+            "-1929349973.0": 1,
+            "-83885093.0": 1
+          }
+        },
+        "min_seg_size_forward": {
+          "rows": 23,
+          "rows_with_nonneg_duration": 23,
+          "distinct_values_top": {
+            "-83885313.0": 23
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 224495,
+          "distinct_values": {
+            "-1.0": 224495
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 299094,
+          "distinct_values": {
+            "-1.0": 299094
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "exact_duplicates": {
+        "extra_copies": 34,
+        "rows_involved": 47,
+        "by_label": {
+          "BENIGN": 34
+        },
+        "adjacent_to_identical_row": 24,
+        "examples": [
+          {
+            "flow_uid": "Monday-WorkingHours:2",
+            "flow_id": "192.168.10.5-8.254.250.126-49188-80-6",
+            "timestamp": "03/07/2017 08:55:58",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Monday-WorkingHours:3",
+            "flow_id": "192.168.10.5-8.254.250.126-49188-80-6",
+            "timestamp": "03/07/2017 08:55:58",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Monday-WorkingHours:6",
+            "flow_id": "192.168.10.14-8.253.185.121-49486-80-6",
+            "timestamp": "03/07/2017 08:56:22",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Monday-WorkingHours:7",
+            "flow_id": "192.168.10.14-8.253.185.121-49486-80-6",
+            "timestamp": "03/07/2017 08:56:22",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Monday-WorkingHours:76",
+            "flow_id": "192.168.10.14-104.97.95.20-49478-443-6",
+            "timestamp": "03/07/2017 08:58:36",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 529918,
+        "unique_flow_ids": 249213,
+        "rows_with_repeated_flow_id": 436613,
+        "flow_ids_repeated": 155908,
+        "max_rows_per_flow_id": 235,
+        "rows_src_not_first_ip_in_flow_id": 354339,
+        "flow_ids_seen_in_both_directions": 92630,
+        "rows_sharing_flow_id_and_timestamp": 111386,
+        "flow_ids_with_multiple_labels": 0,
+        "multi_label_flow_id_label_combos": []
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 1.0,
+        "date_values": [
+          [
+            3,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "03/07/2017 08:55:58",
+          "52992": "03/07/2017 10:04:53",
+          "132479": "03/07/2017 11:40:27",
+          "264958": "03/07/2017 11:15:04",
+          "397438": "03/07/2017 12:54:25",
+          "476925": "03/07/2017 10:36:51",
+          "529917": "03/07/2017 10:34:39"
+        },
+        "raw_range": [
+          "01:00",
+          "12:59"
+        ],
+        "corrected_range": [
+          "08:55",
+          "17:01"
+        ],
+        "backward_jump_fraction_raw": 0.3214560016002506,
+        "backward_jump_fraction_corrected": 0.3214427919844051,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 529918,
+            "raw": [
+              "01:00",
+              "12:59"
+            ],
+            "corrected": [
+              "08:55",
+              "17:01"
+            ]
+          }
+        }
+      }
+    },
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 288603,
+        "crlf_lines": 288603,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 288603
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 288602,
+          "equal": 288602,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 288566,
+          "Infiltration": 36
+        }
+      },
+      "pandas_rows_including_empty": 288602,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 4,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 4,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-12000000.0": 3,
+            "-6000000.0": 1
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 4,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 3,
+            "-1000000.0": 1
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 4,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 3,
+            "-2.0": 1
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 4,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 3,
+            "-2.0": 1
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 353,
+          "rows_with_nonneg_duration": 349,
+          "distinct_values_top": {
+            "-1.0": 340,
+            "-12.0": 6,
+            "-2.0": 5,
+            "-4.0": 1,
+            "-11.0": 1
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 102433,
+          "distinct_values": {
+            "-1.0": 102433
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 164351,
+          "distinct_values": {
+            "-1.0": 164351
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "exact_duplicates": {
+        "extra_copies": 142,
+        "rows_involved": 219,
+        "by_label": {
+          "BENIGN": 142
+        },
+        "adjacent_to_identical_row": 27,
+        "examples": [
+          {
+            "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:52123",
+            "flow_id": "192.168.10.25-192.168.10.50-51037-35807-6",
+            "timestamp": "6/7/2017 2:01",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:80762",
+            "flow_id": "192.168.10.5-192.168.10.8-135-38914-6",
+            "timestamp": "6/7/2017 2:33",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:80764",
+            "flow_id": "192.168.10.5-192.168.10.8-34223-38918-6",
+            "timestamp": "6/7/2017 2:33",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:80766",
+            "flow_id": "192.168.10.5-192.168.10.8-34223-38918-6",
+            "timestamp": "6/7/2017 2:33",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:80788",
+            "flow_id": "192.168.10.5-192.168.10.8-135-38914-6",
+            "timestamp": "6/7/2017 2:33",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 288602,
+        "unique_flow_ids": 183044,
+        "rows_with_repeated_flow_id": 167520,
+        "flow_ids_repeated": 61962,
+        "max_rows_per_flow_id": 119,
+        "rows_src_not_first_ip_in_flow_id": 167984,
+        "flow_ids_seen_in_both_directions": 35892,
+        "rows_sharing_flow_id_and_timestamp": 77488,
+        "flow_ids_with_multiple_labels": 0,
+        "multi_label_flow_id_label_combos": []
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            6,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "6/7/2017 1:00",
+          "28860": "6/7/2017 1:37",
+          "72150": "6/7/2017 2:28",
+          "144300": "6/7/2017 3:16",
+          "216451": "6/7/2017 3:42",
+          "259741": "6/7/2017 4:33",
+          "288601": "6/7/2017 5:04"
+        },
+        "raw_range": [
+          "01:00",
+          "05:04"
+        ],
+        "corrected_range": [
+          "13:00",
+          "17:04"
+        ],
+        "backward_jump_fraction_raw": 0.0,
+        "backward_jump_fraction_corrected": 0.0,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 288566,
+            "raw": [
+              "01:00",
+              "05:04"
+            ],
+            "corrected": [
+              "13:00",
+              "17:04"
+            ]
+          },
+          "Infiltration": {
+            "rows": 36,
+            "raw": [
+              "02:19",
+              "03:45"
+            ],
+            "corrected": [
+              "14:19",
+              "15:45"
+            ],
+            "published": [
+              "14:19",
+              "15:45"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 0.0,
+            "day_matches": true
+          }
+        }
+      }
+    },
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 458969,
+        "crlf_lines": 458969,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 458969
+        },
+        "comma_only_runs": [
+          [
+            170368,
+            458969
+          ]
+        ],
+        "comma_only_lines": 288602,
+        "comma_only_distinct_forms": {
+          ",,,,,,,,,,,,,,,,,,,,... (len 84)": 288602
+        },
+        "transitions": [
+          {
+            "before": [
+              [
+                170365,
+                "192.168.10.12-192.168.10.50-60148-22-6,192.168.10.12,60148,192.168.10.50,22,6,6/7/2017 12:59,1387547,41,46,2728,6634,456,0,66.53658537,110.1299454,976,0,144.217"
+              ],
+              [
+                170366,
+                "192.168.10.12-192.168.10.50-60146-22-6,192.168.10.12,60146,192.168.10.50,22,6,6/7/2017 12:59,207,1,1,0,0,0,0,0,0,0,0,0,0,0,9661.835749,207,0,207,207,0,0,0,0,0,0"
+              ],
+              [
+                170367,
+                "192.168.10.12-192.168.10.50-60146-22-6,192.168.10.50,22,192.168.10.12,60146,6,6/7/2017 12:59,50,1,2,0,0,0,0,0,0,0,0,0,0,0,60000,25,33.9411255,49,1,0,0,0,0,0,1,1"
+              ]
+            ],
+            "first_empty": [
+              170368,
+              ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+            ],
+            "after": [
+              [
+                170369,
+                ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+              ],
+              [
+                170370,
+                ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+              ]
+            ]
+          }
+        ],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 170366,
+          "equal": 170366,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 168186,
+          "57 65 62 20 41 74 74 61 63 6b 20 96 20 42 72 75 74 65 20 46 6f 72 63 65": 1507,
+          "57 65 62 20 41 74 74 61 63 6b 20 96 20 58 53 53": 652,
+          "57 65 62 20 41 74 74 61 63 6b 20 96 20 53 71 6c 20 49 6e 6a 65 63 74 69 6f 6e": 21
+        }
+      },
+      "pandas_rows_including_empty": 458968,
+      "pandas_empty_rows": 288602,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 11,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 10,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-12000000.0": 9,
+            "-261000000.0": 1
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 11
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 11
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 11
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 263,
+          "rows_with_nonneg_duration": 252,
+          "distinct_values_top": {
+            "-1.0": 249,
+            "-2.0": 6,
+            "-3.0": 4,
+            "-5.0": 2,
+            "-12.0": 1
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 81911,
+          "distinct_values": {
+            "-1.0": 81911
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 102373,
+          "distinct_values": {
+            "-1.0": 102373
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "exact_duplicates": {
+        "extra_copies": 1,
+        "rows_involved": 2,
+        "by_label": {
+          "BENIGN": 1
+        },
+        "adjacent_to_identical_row": 1,
+        "examples": [
+          {
+            "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:164289",
+            "flow_id": "192.168.10.25-192.168.10.50-51001-48319-6",
+            "timestamp": "6/7/2017 12:29",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 170366,
+        "unique_flow_ids": 89866,
+        "rows_with_repeated_flow_id": 126791,
+        "flow_ids_repeated": 46291,
+        "max_rows_per_flow_id": 116,
+        "rows_src_not_first_ip_in_flow_id": 117430,
+        "flow_ids_seen_in_both_directions": 26494,
+        "rows_sharing_flow_id_and_timestamp": 52736,
+        "flow_ids_with_multiple_labels": 1833,
+        "multi_label_flow_id_label_combos": [
+          [
+            "BENIGN | Web Attack \u2013 Brute Force",
+            1219
+          ],
+          [
+            "BENIGN | Web Attack \u2013 XSS",
+            605
+          ],
+          [
+            "BENIGN | Web Attack \u2013 Brute Force | Web Attack \u2013 XSS",
+            6
+          ],
+          [
+            "BENIGN | Web Attack \u2013 Sql Injection",
+            3
+          ]
+        ]
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            6,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "6/7/2017 8:59",
+          "17036": "6/7/2017 9:20",
+          "42591": "6/7/2017 9:41",
+          "85182": "6/7/2017 10:33",
+          "127774": "6/7/2017 11:37",
+          "153328": "6/7/2017 12:02",
+          "170365": "6/7/2017 12:59"
+        },
+        "raw_range": [
+          "08:59",
+          "12:59"
+        ],
+        "corrected_range": [
+          "08:59",
+          "12:59"
+        ],
+        "backward_jump_fraction_raw": 0.0,
+        "backward_jump_fraction_corrected": 0.0,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 168186,
+            "raw": [
+              "08:59",
+              "12:59"
+            ],
+            "corrected": [
+              "08:59",
+              "12:59"
+            ]
+          },
+          "Web Attack \u2013 Brute Force": {
+            "rows": 1507,
+            "raw": [
+              "09:15",
+              "10:00"
+            ],
+            "corrected": [
+              "09:15",
+              "10:00"
+            ],
+            "published": [
+              "09:20",
+              "10:00"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 1.0,
+            "day_matches": true
+          },
+          "Web Attack \u2013 Sql Injection": {
+            "rows": 21,
+            "raw": [
+              "10:40",
+              "10:42"
+            ],
+            "corrected": [
+              "10:40",
+              "10:42"
+            ],
+            "published": [
+              "10:40",
+              "10:42"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 1.0,
+            "day_matches": true
+          },
+          "Web Attack \u2013 XSS": {
+            "rows": 652,
+            "raw": [
+              "10:15",
+              "10:35"
+            ],
+            "corrected": [
+              "10:15",
+              "10:35"
+            ],
+            "published": [
+              "10:15",
+              "10:35"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 1.0,
+            "day_matches": true
+          }
+        }
+      }
+    },
+    "Tuesday-WorkingHours.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 445910,
+        "crlf_lines": 445910,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 445910
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 445909,
+          "equal": 445909,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 432074,
+          "FTP-Patator": 7938,
+          "SSH-Patator": 5897
+        }
+      },
+      "pandas_rows_including_empty": 445909,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 17,
+      "other_negatives": {
+        "Flow Packets/s": {
+          "rows": 17,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 16,
+            "-500000.0": 1
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 17,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 16,
+            "-4.0": 1
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 17,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 16,
+            "-4.0": 1
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 505,
+          "rows_with_nonneg_duration": 488,
+          "distinct_values_top": {
+            "-1.0": 488,
+            "-4.0": 6,
+            "-12.0": 5,
+            "-13.0": 2,
+            "-2.0": 2
+          }
+        },
+        "Fwd Header Length": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 11,
+          "distinct_values_top": {
+            "-1073741320.0": 3,
+            "-6442447920.0": 2,
+            "-1073741218.0": 1,
+            "-9663668122.0": 1,
+            "-32212234632.0": 1
+          }
+        },
+        "Bwd Header Length": {
+          "rows": 5,
+          "rows_with_nonneg_duration": 5,
+          "distinct_values_top": {
+            "-1073741320.0": 3,
+            "-1073741218.0": 1,
+            "-1073740992.0": 1
+          }
+        },
+        "Fwd Header Length.1": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 11,
+          "distinct_values_top": {
+            "-1073741320.0": 3,
+            "-6442447920.0": 2,
+            "-1073741218.0": 1,
+            "-9663668122.0": 1,
+            "-32212234632.0": 1
+          }
+        },
+        "min_seg_size_forward": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 11,
+          "distinct_values_top": {
+            "-536870660.0": 9,
+            "-536870661.0": 2
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 200128,
+          "distinct_values": {
+            "-1.0": 200128
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 256599,
+          "distinct_values": {
+            "-1.0": 256599
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "conflicts_without_dst_port": {
+        "groups": 0,
+        "rows": 0,
+        "rows_by_label": {},
+        "label_combinations": [],
+        "largest_groups": []
+      },
+      "exact_duplicates": {
+        "extra_copies": 4,
+        "rows_involved": 8,
+        "by_label": {
+          "BENIGN": 4
+        },
+        "adjacent_to_identical_row": 3,
+        "examples": [
+          {
+            "flow_uid": "Tuesday-WorkingHours:100670",
+            "flow_id": "192.168.10.25-192.168.10.50-52662-62845-6",
+            "timestamp": "4/7/2017 11:19",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Tuesday-WorkingHours:165500",
+            "flow_id": "192.168.10.25-192.168.10.50-57439-29094-6",
+            "timestamp": "4/7/2017 2:15",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Tuesday-WorkingHours:176853",
+            "flow_id": "192.168.10.25-77.123.129.125-59228-443-6",
+            "timestamp": "4/7/2017 2:26",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Tuesday-WorkingHours:230334",
+            "flow_id": "192.168.10.25-192.168.10.50-63206-45022-6",
+            "timestamp": "4/7/2017 3:49",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 445909,
+        "unique_flow_ids": 211628,
+        "rows_with_repeated_flow_id": 363764,
+        "flow_ids_repeated": 129483,
+        "max_rows_per_flow_id": 235,
+        "rows_src_not_first_ip_in_flow_id": 301948,
+        "flow_ids_seen_in_both_directions": 70825,
+        "rows_sharing_flow_id_and_timestamp": 166595,
+        "flow_ids_with_multiple_labels": 1600,
+        "multi_label_flow_id_label_combos": [
+          [
+            "BENIGN | FTP-Patator",
+            1534
+          ],
+          [
+            "BENIGN | SSH-Patator",
+            66
+          ]
+        ]
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            4,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "4/7/2017 8:54",
+          "44591": "4/7/2017 9:48",
+          "111477": "4/7/2017 11:38",
+          "222954": "4/7/2017 3:28",
+          "334431": "4/7/2017 2:53",
+          "401317": "4/7/2017 9:06",
+          "445908": "4/7/2017 10:38"
+        },
+        "raw_range": [
+          "01:00",
+          "12:59"
+        ],
+        "corrected_range": [
+          "08:53",
+          "17:00"
+        ],
+        "backward_jump_fraction_raw": 0.3342886873525481,
+        "backward_jump_fraction_corrected": 0.33426626120186226,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 432074,
+            "raw": [
+              "01:00",
+              "12:59"
+            ],
+            "corrected": [
+              "08:53",
+              "17:00"
+            ]
+          },
+          "FTP-Patator": {
+            "rows": 7938,
+            "raw": [
+              "09:17",
+              "10:30"
+            ],
+            "corrected": [
+              "09:17",
+              "10:30"
+            ],
+            "published": [
+              "09:20",
+              "10:20"
+            ],
+            "corrected_rows_within_published_pm5min": 0.9998740236835475,
+            "raw_rows_within_published_pm5min": 0.9998740236835475,
+            "day_matches": true
+          },
+          "SSH-Patator": {
+            "rows": 5897,
+            "raw": [
+              "02:09",
+              "03:11"
+            ],
+            "corrected": [
+              "14:09",
+              "15:11"
+            ],
+            "published": [
+              "14:00",
+              "15:00"
+            ],
+            "corrected_rows_within_published_pm5min": 0.9248770561302357,
+            "raw_rows_within_published_pm5min": 0.0,
+            "day_matches": true
+          }
+        }
+      }
+    },
+    "Wednesday-workingHours.pcap_ISCX.csv": {
+      "raw_scan": {
+        "lines_total": 692704,
+        "crlf_lines": 692704,
+        "quote_chars": 0,
+        "comma_count_distribution": {
+          "84": 692704
+        },
+        "comma_only_runs": [],
+        "comma_only_lines": 0,
+        "comma_only_distinct_forms": {},
+        "transitions": [],
+        "fwd_header_length_columns": [
+          40,
+          61
+        ],
+        "fwd_header_length_raw_equality": {
+          "compared": 692703,
+          "equal": 692703,
+          "both_empty": 0,
+          "mismatch_examples": []
+        },
+        "raw_label_bytes": {
+          "BENIGN": 440031,
+          "DoS slowloris": 5796,
+          "DoS Slowhttptest": 5499,
+          "DoS Hulk": 231073,
+          "DoS GoldenEye": 10293,
+          "Heartbleed": 11
+        }
+      },
+      "pandas_rows_including_empty": 692703,
+      "pandas_empty_rows": 0,
+      "fwd_header_length_numeric_equal_all_rows": true,
+      "fwd_header_length_numeric_mismatches": 0,
+      "negative_flow_duration_rows": 21,
+      "other_negatives": {
+        "Flow Bytes/s": {
+          "rows": 16,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-12000000.0": 16
+          }
+        },
+        "Flow Packets/s": {
+          "rows": 21,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-2000000.0": 21
+          }
+        },
+        "Flow IAT Mean": {
+          "rows": 21,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 21
+          }
+        },
+        "Flow IAT Max": {
+          "rows": 21,
+          "rows_with_nonneg_duration": 0,
+          "distinct_values_top": {
+            "-1.0": 21
+          }
+        },
+        "Flow IAT Min": {
+          "rows": 749,
+          "rows_with_nonneg_duration": 728,
+          "distinct_values_top": {
+            "-1.0": 707,
+            "-12.0": 9,
+            "-3.0": 7,
+            "-5.0": 5,
+            "-4.0": 4
+          }
+        },
+        "Fwd IAT Min": {
+          "rows": 11,
+          "rows_with_nonneg_duration": 11,
+          "distinct_values_top": {
+            "-1.0": 10,
+            "-8.0": 1
+          }
+        },
+        "Fwd Header Length": {
+          "rows": 1,
+          "rows_with_nonneg_duration": 1,
+          "distinct_values_top": {
+            "-11.0": 1
+          }
+        },
+        "Fwd Header Length.1": {
+          "rows": 1,
+          "rows_with_nonneg_duration": 1,
+          "distinct_values_top": {
+            "-11.0": 1
+          }
+        },
+        "min_seg_size_forward": {
+          "rows": 1,
+          "rows_with_nonneg_duration": 1,
+          "distinct_values_top": {
+            "-1.0": 1
+          }
+        },
+        "Init_Win_bytes_forward": {
+          "rows": 203253,
+          "distinct_values": {
+            "-1.0": 203253
+          }
+        },
+        "Init_Win_bytes_backward": {
+          "rows": 335475,
+          "distinct_values": {
+            "-1.0": 335475
+          }
+        }
+      },
+      "conflicts_with_dst_port": {
+        "groups": 48,
+        "rows": 1091,
+        "rows_by_label": {
+          "DoS Hulk": 1041,
+          "BENIGN": 49,
+          "DoS slowloris": 1
+        },
+        "label_combinations": [
+          [
+            "BENIGN | DoS Hulk",
+            47
+          ],
+          [
+            "BENIGN | DoS slowloris",
+            1
+          ]
+        ],
+        "largest_groups": [
+          {
+            "hash": "01be456ec6bcae1c",
+            "rows": 352,
+            "labels": {
+              "DoS Hulk": 351,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 0.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 351,
+              "192.168.10.19 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "74874",
+              "74996",
+              "75128",
+              "75806",
+              "77599"
+            ]
+          },
+          {
+            "hash": "4d79dee99f1cc2e5",
+            "rows": 132,
+            "labels": {
+              "DoS Hulk": 131,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 49.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 131,
+              "192.168.10.17 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "75772",
+              "77844",
+              "79492",
+              "86943",
+              "86968"
+            ]
+          },
+          {
+            "hash": "738f3f2adbaddddf",
+            "rows": 81,
+            "labels": {
+              "DoS Hulk": 80,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 994.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 80,
+              "192.168.10.51 -> 72.167.18.239": 1
+            },
+            "flow_uids_sample": [
+              "75361",
+              "77243",
+              "77727",
+              "83023",
+              "104886"
+            ]
+          },
+          {
+            "hash": "64f1cf1e4943c9dc",
+            "rows": 61,
+            "labels": {
+              "DoS Hulk": 60,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 223.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 60,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "86627",
+              "99372",
+              "104974",
+              "114949",
+              "117763"
+            ]
+          },
+          {
+            "hash": "25ae86b51e482664",
+            "rows": 46,
+            "labels": {
+              "DoS Hulk": 45,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 225.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 45,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "80789",
+              "93048",
+              "99175",
+              "99365",
+              "105832"
+            ]
+          },
+          {
+            "hash": "24dd6bfdb91bab48",
+            "rows": 36,
+            "labels": {
+              "DoS Hulk": 35,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 216.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 35,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "86655",
+              "86800",
+              "99225",
+              "105863",
+              "110738"
+            ]
+          },
+          {
+            "hash": "908168e9c50e8dcd",
+            "rows": 28,
+            "labels": {
+              "DoS Hulk": 27,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 971.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:48",
+              "5/7/2017 10:49",
+              "5/7/2017 10:52"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 27,
+              "192.168.10.19 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "97794",
+              "121116",
+              "126143",
+              "127872",
+              "135690"
+            ]
+          },
+          {
+            "hash": "15d61d82deb64434",
+            "rows": 24,
+            "labels": {
+              "DoS Hulk": 23,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 50.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:48",
+              "5/7/2017 10:50",
+              "5/7/2017 10:51"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 23,
+              "192.168.10.19 -> 178.255.83.1": 1
+            },
+            "flow_uids_sample": [
+              "94251",
+              "119791",
+              "134290",
+              "151934",
+              "153349"
+            ]
+          },
+          {
+            "hash": "96d92931d587e668",
+            "rows": 23,
+            "labels": {
+              "DoS Hulk": 22,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 205.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48",
+              "5/7/2017 10:49"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 22,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "98422",
+              "99182",
+              "110772",
+              "114730",
+              "129053"
+            ]
+          },
+          {
+            "hash": "5614762c41cb2536",
+            "rows": 22,
+            "labels": {
+              "DoS Hulk": 21,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 193.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48",
+              "5/7/2017 10:50"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 21,
+              "192.168.10.16 -> 113.52.156.18": 1
+            },
+            "flow_uids_sample": [
+              "21090",
+              "98424",
+              "107678",
+              "115339",
+              "119663"
+            ]
+          },
+          {
+            "hash": "1bff2477cae18d4e",
+            "rows": 21,
+            "labels": {
+              "DoS Hulk": 20,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 199.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:01",
+              "5/7/2017 10:44",
+              "5/7/2017 10:48",
+              "5/7/2017 10:49",
+              "5/7/2017 10:50",
+              "5/7/2017 10:52"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 20,
+              "192.168.10.17 -> 133.237.48.212": 1
+            },
+            "flow_uids_sample": [
+              "35554",
+              "98408",
+              "154387",
+              "161937",
+              "166290"
+            ]
+          },
+          {
+            "hash": "576b2432c41c76a0",
+            "rows": 21,
+            "labels": {
+              "DoS Hulk": 20,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 203.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48",
+              "5/7/2017 10:49",
+              "5/7/2017 10:50"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 20,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "98415",
+              "114620",
+              "122004",
+              "147836",
+              "151134"
+            ]
+          },
+          {
+            "hash": "d9641baaa5656d64",
+            "rows": 20,
+            "labels": {
+              "DoS Hulk": 19,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 233.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49",
+              "5/7/2017 10:52",
+              "5/7/2017 10:53"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 19,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "106292",
+              "121194",
+              "125582",
+              "140309",
+              "144230"
+            ]
+          },
+          {
+            "hash": "bdc93f617dfb5194",
+            "rows": 19,
+            "labels": {
+              "DoS Hulk": 17,
+              "BENIGN": 2
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 190.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:01",
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:46",
+              "5/7/2017 10:48",
+              "5/7/2017 10:50"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 17,
+              "192.168.10.17 -> 133.237.48.212": 1,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "36204",
+              "82555",
+              "91161",
+              "96417",
+              "101703"
+            ]
+          },
+          {
+            "hash": "1c973340883a7bdd",
+            "rows": 16,
+            "labels": {
+              "DoS Hulk": 15,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 961.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:20",
+              "5/7/2017 10:43",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49",
+              "5/7/2017 10:50"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 15,
+              "192.168.10.51 -> 72.167.239.239": 1
+            },
+            "flow_uids_sample": [
+              "51675",
+              "79380",
+              "88762",
+              "127770",
+              "148901"
+            ]
+          },
+          {
+            "hash": "789b9d7e33192d9e",
+            "rows": 16,
+            "labels": {
+              "DoS Hulk": 15,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 204.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48",
+              "5/7/2017 10:49",
+              "5/7/2017 10:50"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 15,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "79852",
+              "86628",
+              "98407",
+              "151121",
+              "161889"
+            ]
+          },
+          {
+            "hash": "2359b3b1b167415f",
+            "rows": 14,
+            "labels": {
+              "DoS Hulk": 13,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 242.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49",
+              "5/7/2017 10:51"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 13,
+              "192.168.10.51 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "107152",
+              "111087",
+              "137074",
+              "147917",
+              "166286"
+            ]
+          },
+          {
+            "hash": "2e6ddf86070233cd",
+            "rows": 12,
+            "labels": {
+              "DoS Hulk": 11,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 237.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:50",
+              "5/7/2017 10:52",
+              "5/7/2017 10:53",
+              "5/7/2017 10:58",
+              "5/7/2017 10:59",
+              "5/7/2017 11:00"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 11,
+              "192.168.10.17 -> 72.167.239.239": 1
+            },
+            "flow_uids_sample": [
+              "188388",
+              "213526",
+              "224594",
+              "232024",
+              "288606"
+            ]
+          },
+          {
+            "hash": "66a150ccf3436fde",
+            "rows": 11,
+            "labels": {
+              "DoS Hulk": 10,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 185.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:44",
+              "5/7/2017 10:46",
+              "5/7/2017 10:57",
+              "5/7/2017 10:58",
+              "5/7/2017 10:59",
+              "5/7/2017 11:00"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 10,
+              "192.168.10.51 -> 133.237.48.212": 1
+            },
+            "flow_uids_sample": [
+              "98439",
+              "106572",
+              "132401",
+              "133494",
+              "135856"
+            ]
+          },
+          {
+            "hash": "29e77abc57f58f36",
+            "rows": 10,
+            "labels": {
+              "DoS Hulk": 9,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 187.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:50",
+              "5/7/2017 10:54",
+              "5/7/2017 10:56",
+              "5/7/2017 10:57",
+              "5/7/2017 10:59"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 9,
+              "192.168.10.17 -> 204.2.197.211": 1
+            },
+            "flow_uids_sample": [
+              "86671",
+              "181974",
+              "235648",
+              "240179",
+              "262069"
+            ]
+          },
+          {
+            "hash": "7ca7938b7ead2641",
+            "rows": 10,
+            "labels": {
+              "DoS Hulk": 9,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 214.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48",
+              "5/7/2017 10:50",
+              "5/7/2017 10:54",
+              "5/7/2017 10:55"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 9,
+              "192.168.10.17 -> 72.167.239.239": 1
+            },
+            "flow_uids_sample": [
+              "137036",
+              "141045",
+              "147786",
+              "165944",
+              "188529"
+            ]
+          },
+          {
+            "hash": "aa3e6c3595c7c9d1",
+            "rows": 9,
+            "labels": {
+              "DoS Hulk": 8,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 267.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:45",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49",
+              "5/7/2017 10:51",
+              "5/7/2017 10:53"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 8,
+              "192.168.10.51 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "85684",
+              "114851",
+              "147909",
+              "166522",
+              "173485"
+            ]
+          },
+          {
+            "hash": "b99701e593a873de",
+            "rows": 9,
+            "labels": {
+              "DoS Hulk": 8,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 272.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:45",
+              "5/7/2017 10:49",
+              "5/7/2017 10:50",
+              "5/7/2017 10:51",
+              "5/7/2017 10:58",
+              "5/7/2017 10:59"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 8,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "114988",
+              "173365",
+              "180774",
+              "184172",
+              "195162"
+            ]
+          },
+          {
+            "hash": "3ce8a1449f057820",
+            "rows": 8,
+            "labels": {
+              "DoS Hulk": 7,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 313.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:45",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49",
+              "5/7/2017 10:50",
+              "5/7/2017 10:57",
+              "5/7/2017 10:58"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 7,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "114603",
+              "140318",
+              "143522",
+              "166302",
+              "188513"
+            ]
+          },
+          {
+            "hash": "4358dda4395a7fab",
+            "rows": 8,
+            "labels": {
+              "DoS Hulk": 7,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 265.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:50",
+              "5/7/2017 10:52",
+              "5/7/2017 10:55",
+              "5/7/2017 10:57",
+              "5/7/2017 10:58",
+              "5/7/2017 2:44"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 7,
+              "192.168.10.17 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "183491",
+              "213503",
+              "243749",
+              "281518",
+              "281677"
+            ]
+          }
+        ]
+      },
+      "conflicts_without_dst_port": {
+        "groups": 49,
+        "rows": 1093,
+        "rows_by_label": {
+          "DoS Hulk": 1042,
+          "BENIGN": 50,
+          "DoS slowloris": 1
+        },
+        "label_combinations": [
+          [
+            "BENIGN | DoS Hulk",
+            48
+          ],
+          [
+            "BENIGN | DoS slowloris",
+            1
+          ]
+        ],
+        "largest_groups": [
+          {
+            "hash": "523ddbbc7d50dbea",
+            "rows": 352,
+            "labels": {
+              "DoS Hulk": 351,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 0.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 351,
+              "192.168.10.19 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "74874",
+              "74996",
+              "75128",
+              "75806",
+              "77599"
+            ]
+          },
+          {
+            "hash": "599ca1cec150cf2f",
+            "rows": 132,
+            "labels": {
+              "DoS Hulk": 131,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 49.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 131,
+              "192.168.10.17 -> 50.63.243.230": 1
+            },
+            "flow_uids_sample": [
+              "75772",
+              "77844",
+              "79492",
+              "86943",
+              "86968"
+            ]
+          },
+          {
+            "hash": "6dbb7593012422bb",
+            "rows": 81,
+            "labels": {
+              "DoS Hulk": 80,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 994.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 274.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 80,
+              "192.168.10.51 -> 72.167.18.239": 1
+            },
+            "flow_uids_sample": [
+              "75361",
+              "77243",
+              "77727",
+              "83023",
+              "104886"
+            ]
+          },
+          {
+            "hash": "f2adf9751ca840e0",
+            "rows": 61,
+            "labels": {
+              "DoS Hulk": 60,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 223.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:48"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 60,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "86627",
+              "99372",
+              "104974",
+              "114949",
+              "117763"
+            ]
+          },
+          {
+            "hash": "863a84543e800b84",
+            "rows": 46,
+            "labels": {
+              "DoS Hulk": 45,
+              "BENIGN": 1
+            },
+            "feature_values": {
+              "Destination Port": 80.0,
+              "Protocol": 6.0,
+              "Flow Duration": 225.0,
+              "Total Fwd Packets": 2.0,
+              "Total Backward Packets": 0.0,
+              "Total Length of Fwd Packets": 0.0,
+              "Total Length of Bwd Packets": 0.0,
+              "Init_Win_bytes_forward": 251.0,
+              "Init_Win_bytes_backward": -1.0
+            },
+            "timestamps": [
+              "5/7/2017 10:43",
+              "5/7/2017 10:44",
+              "5/7/2017 10:45",
+              "5/7/2017 10:46",
+              "5/7/2017 10:47",
+              "5/7/2017 10:49"
+            ],
+            "src_dst_top": {
+              "172.16.0.1 -> 192.168.10.50": 45,
+              "192.168.10.19 -> 211.233.74.132": 1
+            },
+            "flow_uids_sample": [
+              "80789",
+              "93048",
+              "99175",
+              "99365",
+              "105832"
+            ]
+          }
+        ]
+      },
+      "exact_duplicates": {
+        "extra_copies": 17,
+        "rows_involved": 23,
+        "by_label": {
+          "BENIGN": 16,
+          "DoS Hulk": 1
+        },
+        "adjacent_to_identical_row": 13,
+        "examples": [
+          {
+            "flow_uid": "Wednesday-workingHours:135646",
+            "flow_id": "172.16.0.1-192.168.10.50-58730-80-6",
+            "timestamp": "5/7/2017 10:46",
+            "label": "DoS Hulk"
+          },
+          {
+            "flow_uid": "Wednesday-workingHours:324761",
+            "flow_id": "192.168.10.25-192.168.10.50-50943-50593-6",
+            "timestamp": "5/7/2017 11:14",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Wednesday-workingHours:461636",
+            "flow_id": "192.168.10.25-192.168.10.50-53083-41725-6",
+            "timestamp": "5/7/2017 3:18",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Wednesday-workingHours:470428",
+            "flow_id": "192.168.10.25-192.168.10.50-53221-59160-6",
+            "timestamp": "5/7/2017 3:27",
+            "label": "BENIGN"
+          },
+          {
+            "flow_uid": "Wednesday-workingHours:489942",
+            "flow_id": "192.168.10.25-192.168.10.50-53485-47628-6",
+            "timestamp": "5/7/2017 4:12",
+            "label": "BENIGN"
+          }
+        ]
+      },
+      "flow_id": {
+        "rows": 692703,
+        "unique_flow_ids": 226768,
+        "rows_with_repeated_flow_id": 603976,
+        "flow_ids_repeated": 138041,
+        "max_rows_per_flow_id": 246,
+        "rows_src_not_first_ip_in_flow_id": 313394,
+        "flow_ids_seen_in_both_directions": 74222,
+        "rows_sharing_flow_id_and_timestamp": 298540,
+        "flow_ids_with_multiple_labels": 12160,
+        "multi_label_flow_id_label_combos": [
+          [
+            "DoS GoldenEye | DoS Hulk",
+            2090
+          ],
+          [
+            "DoS GoldenEye | DoS Hulk | DoS Slowhttptest",
+            1894
+          ],
+          [
+            "DoS Hulk | DoS slowloris",
+            1537
+          ],
+          [
+            "BENIGN | DoS GoldenEye | DoS Hulk | DoS Slowhttptest",
+            1248
+          ],
+          [
+            "BENIGN | DoS Hulk",
+            1074
+          ],
+          [
+            "BENIGN | DoS Hulk | DoS slowloris",
+            1017
+          ],
+          [
+            "DoS GoldenEye | DoS Hulk | DoS slowloris",
+            933
+          ],
+          [
+            "BENIGN | DoS GoldenEye | DoS Hulk",
+            910
+          ],
+          [
+            "BENIGN | DoS Hulk | DoS Slowhttptest",
+            533
+          ],
+          [
+            "DoS Hulk | DoS Slowhttptest",
+            532
+          ]
+        ]
+      },
+      "timestamp": {
+        "unparsed_rows": 0,
+        "with_seconds_fraction": 0.0,
+        "date_values": [
+          [
+            5,
+            7,
+            2017
+          ]
+        ],
+        "hours_present": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "any_hour_13_to_23": false,
+        "any_hour_6_or_7": false,
+        "raw_samples_by_position": {
+          "0": "5/7/2017 8:42",
+          "69270": "5/7/2017 10:10",
+          "173176": "5/7/2017 10:49",
+          "346351": "5/7/2017 11:45",
+          "519526": "5/7/2017 2:17",
+          "623432": "5/7/2017 4:14",
+          "692702": "5/7/2017 2:43"
+        },
+        "raw_range": [
+          "01:00",
+          "12:59"
+        ],
+        "corrected_range": [
+          "08:42",
+          "17:10"
+        ],
+        "backward_jump_fraction_raw": 0.21654188958599802,
+        "backward_jump_fraction_corrected": 0.21651301714157026,
+        "label_windows": {
+          "BENIGN": {
+            "rows": 440031,
+            "raw": [
+              "01:00",
+              "12:59"
+            ],
+            "corrected": [
+              "08:42",
+              "17:10"
+            ]
+          },
+          "DoS GoldenEye": {
+            "rows": 10293,
+            "raw": [
+              "11:10",
+              "11:19"
+            ],
+            "corrected": [
+              "11:10",
+              "11:19"
+            ],
+            "published": [
+              "11:10",
+              "11:23"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 1.0,
+            "day_matches": true
+          },
+          "DoS Hulk": {
+            "rows": 231073,
+            "raw": [
+              "10:43",
+              "11:07"
+            ],
+            "corrected": [
+              "10:43",
+              "11:07"
+            ],
+            "published": [
+              "10:43",
+              "11:00"
+            ],
+            "corrected_rows_within_published_pm5min": 0.9993724926754749,
+            "raw_rows_within_published_pm5min": 0.9993724926754749,
+            "day_matches": true
+          },
+          "DoS Slowhttptest": {
+            "rows": 5499,
+            "raw": [
+              "10:15",
+              "10:37"
+            ],
+            "corrected": [
+              "10:15",
+              "10:37"
+            ],
+            "published": [
+              "10:14",
+              "10:35"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 1.0,
+            "day_matches": true
+          },
+          "DoS slowloris": {
+            "rows": 5796,
+            "raw": [
+              "02:24",
+              "10:11"
+            ],
+            "corrected": [
+              "09:01",
+              "14:25"
+            ],
+            "published": [
+              "09:47",
+              "10:10"
+            ],
+            "corrected_rows_within_published_pm5min": 0.9989648033126294,
+            "raw_rows_within_published_pm5min": 0.9989648033126294,
+            "day_matches": true
+          },
+          "Heartbleed": {
+            "rows": 11,
+            "raw": [
+              "03:12",
+              "03:32"
+            ],
+            "corrected": [
+              "15:12",
+              "15:32"
+            ],
+            "published": [
+              "15:12",
+              "15:32"
+            ],
+            "corrected_rows_within_published_pm5min": 1.0,
+            "raw_rows_within_published_pm5min": 0.0,
+            "day_matches": true
+          }
+        }
+      }
+    }
+  },
+  "cross_file": {
+    "distinct_content_rows_shared": 33548,
+    "rows_involved": 139720,
+    "rows_involved_by_label": {
+      "BENIGN": 139720
+    },
+    "file_combinations_top": [
+      [
+        "Tuesday-WorkingHours & Wednesday-workingHours",
+        3523
+      ],
+      [
+        "Thursday-WorkingHours-Afternoon-Infilteration & Wednesday-workingHours",
+        2194
+      ],
+      [
+        "Friday-WorkingHours-Morning & Wednesday-workingHours",
+        2106
+      ],
+      [
+        "Thursday-WorkingHours-Morning-WebAttacks & Wednesday-workingHours",
+        1767
+      ],
+      [
+        "Friday-WorkingHours-Morning & Tuesday-WorkingHours",
+        1416
+      ],
+      [
+        "Thursday-WorkingHours-Afternoon-Infilteration & Tuesday-WorkingHours",
+        1387
+      ],
+      [
+        "Friday-WorkingHours-Afternoon-PortScan & Wednesday-workingHours",
+        1284
+      ],
+      [
+        "Thursday-WorkingHours-Morning-WebAttacks & Tuesday-WorkingHours",
+        1211
+      ],
+      [
+        "Friday-WorkingHours-Afternoon-PortScan & Tuesday-WorkingHours",
+        1028
+      ],
+      [
+        "Thursday-WorkingHours-Afternoon-Infilteration & Thursday-WorkingHours-Morning-WebAttacks",
+        909
+      ]
+    ],
+    "shared_rows_packets_quantiles": {
+      "0.5": 4.0,
+      "0.9": 4.0,
+      "0.99": 13.0
+    },
+    "shared_rows_duration_us_quantiles": {
+      "0.5": 163.0,
+      "0.9": 257.0,
+      "0.99": 95018.0
+    },
+    "shared_rows_top_dst_ports": {
+      "53.0": 85954,
+      "443.0": 24417,
+      "80.0": 13104,
+      "137.0": 4373,
+      "22.0": 3304
+    },
+    "feature_vectors_with_conflicting_labels_across_files": 663,
+    "flow_ids_in_multiple_files": 150961
+  },
+  "negative_flow_duration": {
+    "rows": 115,
+    "by_label": {
+      "BENIGN": 115
+    },
+    "duration_values": {
+      "-1.0": 109,
+      "-12.0": 2,
+      "-2.0": 2,
+      "-13.0": 1,
+      "-4.0": 1
+    },
+    "rows_with_negative_rate": 115,
+    "rows_with_negative_iat": 115,
+    "records": [
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-DDos:200991",
+        "file_line": 200993,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.15-68.67.178.137-59656-443-6",
+        "Timestamp": "7/7/2017 4:20",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-DDos:224100",
+        "file_line": 224102,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-23.52.155.27-10290-80-6",
+        "Timestamp": "7/7/2017 4:59",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:47878",
+        "file_line": 47880,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-52.84.40.52-56188-80-6",
+        "Timestamp": "7/7/2017 2:07",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:61031",
+        "file_line": 61033,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 187.0,
+        "Flow Bytes/s": -193000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-198.11.245.250-6398-80-6",
+        "Timestamp": "7/7/2017 2:20",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:61927",
+        "file_line": 61929,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-35.167.220.41-56407-443-6",
+        "Timestamp": "7/7/2017 2:22",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:86737",
+        "file_line": 86739,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.15-216.58.219.193-56559-80-6",
+        "Timestamp": "7/7/2017 2:50",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:90372",
+        "file_line": 90374,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-45002-1719-6",
+        "Timestamp": "7/7/2017 2:51",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:90965",
+        "file_line": 90967,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-55191-1301-6",
+        "Timestamp": "7/7/2017 2:51",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:98622",
+        "file_line": 98624,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-57689-9917-6",
+        "Timestamp": "7/7/2017 2:51",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:100588",
+        "file_line": 100590,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-41653-179-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:103291",
+        "file_line": 103293,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-45423-6567-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:107386",
+        "file_line": 107388,
+        "Flow Duration": -12.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -666666.6667,
+        "Flow Packets/s": -166666.6667,
+        "Flow IAT Mean": -12.0,
+        "Flow IAT Max": -12.0,
+        "Flow IAT Min": -12.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-39070-5963-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -166666.6666666667,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:109286",
+        "file_line": 109288,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-38529-16113-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:114327",
+        "file_line": 114329,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-53430-9000-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:118493",
+        "file_line": 118495,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-63910-1060-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:118588",
+        "file_line": 118590,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-63910-109-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:121909",
+        "file_line": 121911,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-57042-444-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:131057",
+        "file_line": 131059,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-54812-5200-6",
+        "Timestamp": "7/7/2017 2:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:148702",
+        "file_line": 148704,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-49656-199-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:158369",
+        "file_line": 158371,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-37116-427-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:158708",
+        "file_line": 158710,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-50288-3372-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:162085",
+        "file_line": 162087,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-55228-9575-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:166714",
+        "file_line": 166716,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-48882-8333-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:175376",
+        "file_line": 175378,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-38112-1300-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:180760",
+        "file_line": 180762,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-33224-6009-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:181420",
+        "file_line": 181422,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-49964-1022-6",
+        "Timestamp": "7/7/2017 2:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:187031",
+        "file_line": 187033,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-37274-1723-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:205445",
+        "file_line": 205447,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-59638-1947-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:208858",
+        "file_line": 208860,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-41008-5963-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:209010",
+        "file_line": 209012,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-60002-4003-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:213316",
+        "file_line": 213318,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-34448-1500-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:214692",
+        "file_line": 214694,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-56846-7921-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:217870",
+        "file_line": 217872,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-35698-7002-6",
+        "Timestamp": "7/7/2017 2:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:230106",
+        "file_line": 230108,
+        "Flow Duration": -13.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": -461538.4615,
+        "Flow Packets/s": -153846.1538,
+        "Flow IAT Mean": -13.0,
+        "Flow IAT Max": -13.0,
+        "Flow IAT Min": -13.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-34040-902-6",
+        "Timestamp": "7/7/2017 2:56",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -153846.1538461538,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:247731",
+        "file_line": 247733,
+        "Flow Duration": -2.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -4000000.0,
+        "Flow Packets/s": -1000000.0,
+        "Flow IAT Mean": -2.0,
+        "Flow IAT Max": -2.0,
+        "Flow IAT Min": -2.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-64318-765-6",
+        "Timestamp": "7/7/2017 3:09",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -1000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:249415",
+        "file_line": 249417,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-53049-25-6",
+        "Timestamp": "7/7/2017 3:09",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:252530",
+        "file_line": 252532,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 2.0,
+        "Flow Bytes/s": -8000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.16.0.1-192.168.10.50-48416-2323-6",
+        "Timestamp": "7/7/2017 3:10",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Afternoon-PortScan:284001",
+        "file_line": 284003,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-52.203.66.59-54960-443-6",
+        "Timestamp": "7/7/2017 3:28",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:17562",
+        "file_line": 17564,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "178.255.83.1-192.168.10.19-80-41470-6",
+        "Timestamp": "7/7/2017 9:25",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:45711",
+        "file_line": 45713,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.15-200.147.68.17-51345-80-6",
+        "Timestamp": "7/7/2017 9:56",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:64028",
+        "file_line": 64030,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.3-64.4.54.253-55683-443-6",
+        "Timestamp": "7/7/2017 10:09",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:73453",
+        "file_line": 73455,
+        "Flow Duration": -12.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -1000000.0,
+        "Flow Packets/s": -166666.6667,
+        "Flow IAT Mean": -12.0,
+        "Flow IAT Max": -12.0,
+        "Flow IAT Min": -12.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.9-23.15.4.18-2166-80-6",
+        "Timestamp": "7/7/2017 10:17",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -166666.6666666667,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:85150",
+        "file_line": 85152,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-23.21.110.0-51561-443-6",
+        "Timestamp": "7/7/2017 10:24",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:113821",
+        "file_line": 113823,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.9-74.121.138.148-4252-443-6",
+        "Timestamp": "7/7/2017 10:48",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:116505",
+        "file_line": 116507,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.9-69.90.153.134-4504-80-6",
+        "Timestamp": "7/7/2017 10:52",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:125860",
+        "file_line": 125862,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-72.21.91.29-50072-80-6",
+        "Timestamp": "7/7/2017 11:05",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Friday-WorkingHours-Morning:128704",
+        "file_line": 128706,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.9-23.60.139.27-5296-80-6",
+        "Timestamp": "7/7/2017 11:07",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:13823",
+        "file_line": 13825,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "162.208.20.178-192.168.10.5-443-50303-6",
+        "Timestamp": "03/07/2017 09:30:27",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:42059",
+        "file_line": 42061,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "162.208.20.178-192.168.10.5-443-52791-6",
+        "Timestamp": "03/07/2017 10:02:34",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:78160",
+        "file_line": 78162,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-52.204.16.138-52958-443-6",
+        "Timestamp": "03/07/2017 10:42:18",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:79642",
+        "file_line": 79644,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.10.45-192.168.10.25-443-53589-6",
+        "Timestamp": "03/07/2017 10:44:00",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:111443",
+        "file_line": 111445,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.12.194-192.168.10.25-443-58792-6",
+        "Timestamp": "03/07/2017 11:17:53",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:130539",
+        "file_line": 130541,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "146.20.128.214-192.168.10.5-443-58467-6",
+        "Timestamp": "03/07/2017 11:38:36",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:145738",
+        "file_line": 145740,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "153.149.96.48-192.168.10.15-80-51746-6",
+        "Timestamp": "03/07/2017 11:53:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:151670",
+        "file_line": 151672,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.10.34-192.168.10.25-443-49322-6",
+        "Timestamp": "03/07/2017 11:59:09",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:249887",
+        "file_line": 249889,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-104.88.86.91-57285-80-6",
+        "Timestamp": "03/07/2017 02:35:46",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:282665",
+        "file_line": 282667,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "184.29.139.32-192.168.10.5-80-50157-6",
+        "Timestamp": "03/07/2017 03:42:59",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:286677",
+        "file_line": 286679,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "162.213.33.44-192.168.10.51-443-44348-6",
+        "Timestamp": "03/07/2017 03:52:10",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:311204",
+        "file_line": 311206,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.11.14-192.168.10.15-80-54203-6",
+        "Timestamp": "03/07/2017 04:31:19",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:348128",
+        "file_line": 348130,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-74.119.118.82-55092-443-6",
+        "Timestamp": "03/07/2017 02:19:03",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:362906",
+        "file_line": 362908,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.6.226-192.168.10.25-443-63273-6",
+        "Timestamp": "03/07/2017 04:34:26",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Monday-WorkingHours:451865",
+        "file_line": 451867,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.10.3-192.168.10.25-443-58700-6",
+        "Timestamp": "03/07/2017 12:55:54",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:5641",
+        "file_line": 5643,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.15-52.212.233.5-55626-443-6",
+        "Timestamp": "6/7/2017 1:12",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:57539",
+        "file_line": 57541,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.15-68.67.178.196-58452-443-6",
+        "Timestamp": "6/7/2017 2:05",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:68970",
+        "file_line": 68972,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.3-64.4.54.254-54979-443-6",
+        "Timestamp": "6/7/2017 2:20",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Afternoon-Infilteration:286539",
+        "file_line": 286541,
+        "Flow Duration": -2.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -6000000.0,
+        "Flow Packets/s": -1000000.0,
+        "Flow IAT Mean": -2.0,
+        "Flow IAT Max": -2.0,
+        "Flow IAT Min": -2.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.12.194-192.168.10.8-443-2631-6",
+        "Timestamp": "6/7/2017 5:00",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -1000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:28032",
+        "file_line": 28034,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 261.0,
+        "Flow Bytes/s": -261000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "131.253.34.255-192.168.10.3-443-58869-6",
+        "Timestamp": "6/7/2017 9:30",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:38703",
+        "file_line": 38705,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.15-104.16.69.157-52063-443-6",
+        "Timestamp": "6/7/2017 9:39",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:64023",
+        "file_line": 64025,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-54.200.60.113-59804-443-6",
+        "Timestamp": "6/7/2017 10:02",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:68865",
+        "file_line": 68867,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "184.169.153.255-192.168.10.14-80-60015-6",
+        "Timestamp": "6/7/2017 10:09",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:74921",
+        "file_line": 74923,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-72.21.202.62-60480-80-6",
+        "Timestamp": "6/7/2017 10:19",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:76091",
+        "file_line": 76093,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-52.84.40.30-60395-80-6",
+        "Timestamp": "6/7/2017 10:21",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:127742",
+        "file_line": 127744,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-23.15.4.18-51770-80-6",
+        "Timestamp": "6/7/2017 11:37",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:129761",
+        "file_line": 129763,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.16-52.84.26.5-55294-443-6",
+        "Timestamp": "6/7/2017 11:39",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:146046",
+        "file_line": 146048,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.11.14-192.168.10.14-80-62699-6",
+        "Timestamp": "6/7/2017 11:56",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:146576",
+        "file_line": 146578,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-54.201.188.11-62707-443-6",
+        "Timestamp": "6/7/2017 11:56",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Thursday-WorkingHours-Morning-WebAttacks:158103",
+        "file_line": 158105,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-52.84.26.254-63036-443-6",
+        "Timestamp": "6/7/2017 12:14",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:24737",
+        "file_line": 24739,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "149.174.66.133-192.168.10.16-443-53392-6",
+        "Timestamp": "4/7/2017 9:35",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:27021",
+        "file_line": 27023,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-52.84.137.101-49973-443-6",
+        "Timestamp": "4/7/2017 9:37",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:74737",
+        "file_line": 74739,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "191.237.32.134-192.168.10.5-80-53880-6",
+        "Timestamp": "4/7/2017 10:37",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:90837",
+        "file_line": 90839,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-54.225.179.152-53284-443-6",
+        "Timestamp": "4/7/2017 11:04",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:103704",
+        "file_line": 103706,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-23.15.4.11-56091-80-6",
+        "Timestamp": "4/7/2017 11:27",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:112258",
+        "file_line": 112260,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-72.21.91.29-56629-80-6",
+        "Timestamp": "4/7/2017 11:42",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:119674",
+        "file_line": 119676,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-54.192.36.157-56766-80-6",
+        "Timestamp": "4/7/2017 11:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:124890",
+        "file_line": 124892,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-52.213.94.142-54214-443-6",
+        "Timestamp": "4/7/2017 12:10",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:142333",
+        "file_line": 142335,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.10.78-192.168.10.5-80-56957-6",
+        "Timestamp": "4/7/2017 1:27",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:203778",
+        "file_line": 203780,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.51-23.111.9.16-54840-443-6",
+        "Timestamp": "4/7/2017 3:01",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:205544",
+        "file_line": 205546,
+        "Flow Duration": -4.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -500000.0,
+        "Flow IAT Mean": -4.0,
+        "Flow IAT Max": -4.0,
+        "Flow IAT Min": -4.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-52.84.143.147-55745-80-6",
+        "Timestamp": "4/7/2017 3:05",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -500000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:270570",
+        "file_line": 270572,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.17-54.230.38.82-35043-443-6",
+        "Timestamp": "4/7/2017 4:49",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:306334",
+        "file_line": 306336,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.17-52.203.66.59-34686-443-6",
+        "Timestamp": "4/7/2017 10:32",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:366572",
+        "file_line": 366574,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.25-52.84.145.207-54072-443-6",
+        "Timestamp": "4/7/2017 12:16",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:380402",
+        "file_line": 380404,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.25-52.84.145.117-59903-443-6",
+        "Timestamp": "4/7/2017 2:37",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:394006",
+        "file_line": 394008,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-74.122.189.133-55803-443-6",
+        "Timestamp": "4/7/2017 3:10",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Tuesday-WorkingHours:416621",
+        "file_line": 416623,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "162.247.242.20-192.168.10.8-443-57454-6",
+        "Timestamp": "4/7/2017 4:55",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:1603",
+        "file_line": 1605,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.5-23.50.75.27-49367-80-6",
+        "Timestamp": "5/7/2017 8:51",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:19628",
+        "file_line": 19630,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-83.66.140.44-49850-80-6",
+        "Timestamp": "5/7/2017 9:32",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:22705",
+        "file_line": 22707,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-104.88.9.44-50567-80-6",
+        "Timestamp": "5/7/2017 9:40",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:34381",
+        "file_line": 34383,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-72.167.18.239-50923-80-6",
+        "Timestamp": "5/7/2017 9:59",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:174361",
+        "file_line": 174363,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-23.21.91.36-51901-443-6",
+        "Timestamp": "5/7/2017 10:50",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:355144",
+        "file_line": 355146,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.12.163-192.168.10.17-443-52169-6",
+        "Timestamp": "5/7/2017 12:03",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:394640",
+        "file_line": 394642,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "151.101.64.249-192.168.10.17-80-49424-6",
+        "Timestamp": "5/7/2017 1:56",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:426505",
+        "file_line": 426507,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-50.17.224.254-55541-443-6",
+        "Timestamp": "5/7/2017 2:36",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:433139",
+        "file_line": 433141,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-104.97.73.166-59621-80-6",
+        "Timestamp": "5/7/2017 2:46",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:440538",
+        "file_line": 440540,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.51-23.203.66.138-36660-80-6",
+        "Timestamp": "5/7/2017 3:02",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:444723",
+        "file_line": 444725,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "162.208.22.34-192.168.10.5-443-54174-6",
+        "Timestamp": "5/7/2017 3:08",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:470416",
+        "file_line": 470418,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.19-117.53.117.16-49404-80-6",
+        "Timestamp": "5/7/2017 3:27",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:472091",
+        "file_line": 472093,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-72.21.91.29-60800-80-6",
+        "Timestamp": "5/7/2017 3:29",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:475294",
+        "file_line": 475296,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.14-209.48.71.147-56840-80-6",
+        "Timestamp": "5/7/2017 3:35",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:485435",
+        "file_line": 485437,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.10.74-192.168.10.17-443-46519-6",
+        "Timestamp": "5/7/2017 4:02",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:506357",
+        "file_line": 506359,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 0.0,
+        "Total Length of Bwd Packets": 0.0,
+        "Flow Bytes/s": 0.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.3.98-192.168.10.19-443-47986-6",
+        "Timestamp": "5/7/2017 4:47",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:540592",
+        "file_line": 540594,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-74.119.118.86-58486-443-6",
+        "Timestamp": "5/7/2017 2:37",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:604810",
+        "file_line": 604812,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-63.251.109.88-51927-443-6",
+        "Timestamp": "5/7/2017 10:38",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:605549",
+        "file_line": 605551,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-74.119.118.82-51838-443-6",
+        "Timestamp": "5/7/2017 10:33",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:639746",
+        "file_line": 639748,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "192.168.10.8-192.243.250.16-51172-443-6",
+        "Timestamp": "5/7/2017 10:04",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      },
+      {
+        "flow_uid": "Wednesday-workingHours:656619",
+        "file_line": 656621,
+        "Flow Duration": -1.0,
+        "Total Fwd Packets": 1.0,
+        "Total Backward Packets": 1.0,
+        "Total Length of Fwd Packets": 6.0,
+        "Total Length of Bwd Packets": 6.0,
+        "Flow Bytes/s": -12000000.0,
+        "Flow Packets/s": -2000000.0,
+        "Flow IAT Mean": -1.0,
+        "Flow IAT Max": -1.0,
+        "Flow IAT Min": -1.0,
+        "Fwd IAT Total": 0.0,
+        "Bwd IAT Total": 0.0,
+        "Flow ID": "172.217.10.34-192.168.10.8-443-53290-6",
+        "Timestamp": "5/7/2017 11:40",
+        "Label": "BENIGN",
+        "packets_per_s_recomputed": -2000000.0,
+        "rate_negative": true,
+        "iat_negative": true
+      }
+    ]
+  },
+  "label_mapping": {
+    "mapped": {
+      "DDoS": {
+        "rows": 128027,
+        "map": [
+          "DDoS",
+          "DDoS",
+          1
+        ]
+      },
+      "BENIGN": {
+        "rows": 2273097,
+        "map": [
+          "BENIGN",
+          "Benign",
+          0
+        ]
+      },
+      "PortScan": {
+        "rows": 158930,
+        "map": [
+          "PortScan",
+          "PortScan",
+          1
+        ]
+      },
+      "Bot": {
+        "rows": 1966,
+        "map": [
+          "Bot",
+          "Bot",
+          1
+        ]
+      },
+      "Infiltration": {
+        "rows": 36,
+        "map": [
+          "Infiltration",
+          "Infiltration",
+          1
+        ]
+      },
+      "Web Attack \u2013 Brute Force": {
+        "rows": 1507,
+        "map": [
+          "Web Attack - Brute Force",
+          "WebAttack",
+          1
+        ]
+      },
+      "Web Attack \u2013 XSS": {
+        "rows": 652,
+        "map": [
+          "Web Attack - XSS",
+          "WebAttack",
+          1
+        ]
+      },
+      "Web Attack \u2013 Sql Injection": {
+        "rows": 21,
+        "map": [
+          "Web Attack - SQL Injection",
+          "WebAttack",
+          1
+        ]
+      },
+      "FTP-Patator": {
+        "rows": 7938,
+        "map": [
+          "FTP-Patator",
+          "BruteForce",
+          1
+        ]
+      },
+      "SSH-Patator": {
+        "rows": 5897,
+        "map": [
+          "SSH-Patator",
+          "BruteForce",
+          1
+        ]
+      },
+      "DoS Hulk": {
+        "rows": 231073,
+        "map": [
+          "DoS Hulk",
+          "DoS",
+          1
+        ]
+      },
+      "DoS GoldenEye": {
+        "rows": 10293,
+        "map": [
+          "DoS GoldenEye",
+          "DoS",
+          1
+        ]
+      },
+      "DoS slowloris": {
+        "rows": 5796,
+        "map": [
+          "DoS slowloris",
+          "DoS",
+          1
+        ]
+      },
+      "DoS Slowhttptest": {
+        "rows": 5499,
+        "map": [
+          "DoS Slowhttptest",
+          "DoS",
+          1
+        ]
+      },
+      "Heartbleed": {
+        "rows": 11,
+        "map": [
+          "Heartbleed",
+          "Heartbleed",
+          1
+        ]
+      }
+    },
+    "errors": {}
+  }
+}

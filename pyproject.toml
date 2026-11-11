@@ -1,0 +1,13 @@
+[project]
+name = "graphsentinel"
+version = "0.1.0"
+description = "Graph-based NIDS and identity-aggregation robustness analysis on CICIDS2017"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+markers = [
+    "realdata: tests that need the real CICIDS2017 CSVs under data/raw (skipped if absent)",
+]

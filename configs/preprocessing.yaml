@@ -1,0 +1,63 @@
+# GraphSentinel preprocessing (Milestone 1). Implements docs/dataset_contract.md v1.0.
+contract_version: "1.1"
+data_version: v1
+seed: 42                     # preprocessing is deterministic; seed recorded for completeness
+
+paths:
+  raw_dir: data/raw/CICIDS2017/TrafficLabelling
+  manifest: configs/raw_manifest_cicids2017.json   # null disables verification (synthetic tests only)
+  out_dir: data/processed/v1
+  report_dir: reports/preprocessing
+
+# file -> expected capture date (verified against every parsed timestamp)
+files:
+  Monday-WorkingHours.pcap_ISCX.csv: "2017-07-03"
+  Tuesday-WorkingHours.pcap_ISCX.csv: "2017-07-04"
+  Wednesday-workingHours.pcap_ISCX.csv: "2017-07-05"
+  Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv: "2017-07-06"
+  Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv: "2017-07-06"
+  Friday-WorkingHours-Morning.pcap_ISCX.csv: "2017-07-07"
+  Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv: "2017-07-07"
+  Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv: "2017-07-07"
+
+timestamps:
+  pm_hours: [1, 5]                          # 12-hour clock without AM/PM: hours 1..5 -> +12 (contract §3)
+  allowed_hours: [1, 2, 3, 4, 5, 8, 9, 10, 11, 12]   # anything else aborts the run
+
+features:
+  duplicate_header_drop: {drop: "Fwd Header Length.1", must_equal: "Fwd Header Length"}
+  clip_negative_to_zero: ["Flow IAT Min", "Fwd IAT Min"]     # IAT jitter artefacts (contract §4.2)
+  invalid_negative_to_missing: ["Fwd Header Length", "Bwd Header Length", "min_seg_size_forward"]
+  overflow_threshold: -65536                 # <= threshold logged as 'overflow', else 'invalid_negative'
+  nonfinite_rate_columns: ["Flow Bytes/s", "Flow Packets/s"]
+  assert_nonfinite_equals_zero_duration: true
+  sentinel_columns: {"Init_Win_bytes_forward": -1, "Init_Win_bytes_backward": -1}
+  feature_sets:
+    default: {include_destination_port: false}
+    dstport: {include_destination_port: true}     # ablation (contract §4.1)
+
+splits:
+  primary:          # time-ordered within (day, label_fine)
+    fractions: [0.70, 0.15, 0.15]
+    names: [train, val, test]
+    purge_gap_seconds: 60
+    min_group_size_for_purge: 100
+  dayholdout:       # binary generalization experiment
+    train_days: ["2017-07-03", "2017-07-04", "2017-07-05"]
+    test_days: ["2017-07-06", "2017-07-07"]
+    trainval_fractions: [0.85, 0.15]
+    purge_gap_seconds: 60
+    min_group_size_for_purge: 100
+
+diagnostics:
+  dominant_pair: {src: "172.16.0.1", dst: "192.168.10.50"}
+  schedule_tolerance_minutes: 5
+  low_support_threshold: 30          # per split; classes below are flagged low_support
+
+# Exact counts established by the audit (contract §1). null = do not assert.
+expect:
+  comma_only_rows: 288602
+  exact_duplicate_rows: 203
+  negative_duration_rows: 115
+  final_rows: 2830425
+  timestamp_corrected_rows: 1471487   # kept rows only (1,471,716 over all non-empty rows; 229 removed rows were in hours 1-5)
