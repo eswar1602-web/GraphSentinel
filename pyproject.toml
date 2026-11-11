@@ -8,6 +8,12 @@ requires-python = ">=3.11"
 testpaths = ["tests"]
 pythonpath = ["."]
 addopts = "-ra"
+filterwarnings = [
+    # third-party: torch_geometric uses torch.jit.script internally (torch >= 2.10 deprecation notice)
+    "ignore:`torch.jit.script` is deprecated:FutureWarning",
+    # third-party: starlette's TestClient notice about httpx (test-only dependency)
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+]
 markers = [
     "realdata: tests that need the real CICIDS2017 CSVs under data/raw (skipped if absent)",
 ]

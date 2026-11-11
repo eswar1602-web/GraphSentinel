@@ -1,0 +1,531 @@
+{
+ "num_endpoints": 19129,
+ "aggregation_seed": 2017,
+ "levels": {
+  "native_identity_baseline": {
+   "merge_factor": 1,
+   "buckets": 19129,
+   "all_flows": {
+    "active_nodes": 19129,
+    "flows": 2830425,
+    "unique_directed_pairs": 113769,
+    "self_loop_flows": 0,
+    "self_loop_pairs": 0,
+    "avg_degree_distinct_pairs": 11.89492393747713,
+    "avg_flows_per_node": 295.93026295153953,
+    "density": 0.0003109296303188292,
+    "weakly_connected_components": 3,
+    "largest_component_fraction": 0.9962883579904857,
+    "degree_quantiles": {
+     "0.5": 4.0,
+     "0.9": 14.0,
+     "0.99": 22.0,
+     "1.0": 12281.0
+    },
+    "degree_histogram_log2": [
+     1409,
+     6887,
+     5426,
+     3763,
+     1630,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0,
+     0,
+     1,
+     10
+    ]
+   },
+   "train_context": {
+    "active_nodes": 16702,
+    "flows": 1973421,
+    "unique_directed_pairs": 90604,
+    "self_loop_flows": 0,
+    "self_loop_pairs": 0,
+    "avg_degree_distinct_pairs": 10.849479104298887,
+    "avg_flows_per_node": 236.3095437672135,
+    "density": 0.00032481525370633155,
+    "weakly_connected_components": 3,
+    "largest_component_fraction": 0.9985630463417555,
+    "degree_quantiles": {
+     "0.5": 4.0,
+     "0.9": 13.0,
+     "0.99": 22.0,
+     "1.0": 10051.0
+    },
+    "degree_histogram_log2": [
+     1375,
+     6590,
+     4690,
+     2901,
+     1133,
+     0,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0,
+     6,
+     5
+    ]
+   },
+   "neighbourhood_change": {
+    "mean_jaccard": 1.0,
+    "fraction_unchanged": 1.0
+   },
+   "label_mixing_all_flows": {
+    "pairs_with_both_benign_and_attack": 10,
+    "attack_flows_on_mixed_pairs": 557046,
+    "benign_flows_on_mixed_pairs": 47042
+   },
+   "dominant_pair": {
+    "bucket_pair_flows": 555763,
+    "attack_fraction_on_bucket_pair": 0.9997588900304626,
+    "original_dominant_flows": 555763,
+    "endpoints_sharing_attacker_bucket": 1,
+    "endpoints_sharing_victim_bucket": 1
+   }
+  },
+  "merge_factor_2": {
+   "merge_factor": 2,
+   "buckets": 9565,
+   "all_flows": {
+    "active_nodes": 9565,
+    "flows": 2830425,
+    "unique_directed_pairs": 98134,
+    "self_loop_flows": 38,
+    "self_loop_pairs": 3,
+    "avg_degree_distinct_pairs": 20.51939362258233,
+    "avg_flows_per_node": 591.829587036069,
+    "density": 0.001072741197332828,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 9.0,
+     "0.9": 20.0,
+     "0.99": 22.0,
+     "1.0": 10300.0
+    },
+    "degree_histogram_log2": [
+     7,
+     654,
+     3032,
+     3833,
+     2025,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0,
+     0,
+     2,
+     9
+    ]
+   },
+   "train_context": {
+    "active_nodes": 9419,
+    "flows": 1973421,
+    "unique_directed_pairs": 80682,
+    "self_loop_flows": 34,
+    "self_loop_pairs": 3,
+    "avg_degree_distinct_pairs": 17.131754963371908,
+    "avg_flows_per_node": 419.0298333156386,
+    "density": 0.0009095219241543803,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 7.0,
+     "0.9": 18.0,
+     "0.99": 22.0,
+     "1.0": 8720.0
+    },
+    "degree_histogram_log2": [
+     191,
+     1395,
+     3274,
+     3178,
+     1368,
+     0,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0,
+     10,
+     1
+    ]
+   },
+   "neighbourhood_change": {
+    "nodes_evaluated": 19129,
+    "mean_jaccard": 0.5770295835898331,
+    "median_jaccard": 0.5,
+    "fraction_unchanged": 0.168017146740551
+   },
+   "label_mixing_all_flows": {
+    "pairs_with_both_benign_and_attack": 15,
+    "attack_flows_on_mixed_pairs": 557645,
+    "benign_flows_on_mixed_pairs": 47086
+   },
+   "dominant_pair": {
+    "bucket_pair_flows": 555763,
+    "attack_fraction_on_bucket_pair": 0.9997588900304626,
+    "original_dominant_flows": 555763,
+    "endpoints_sharing_attacker_bucket": 2,
+    "endpoints_sharing_victim_bucket": 2
+   }
+  },
+  "merge_factor_4": {
+   "merge_factor": 4,
+   "buckets": 4783,
+   "all_flows": {
+    "active_nodes": 4783,
+    "flows": 2830425,
+    "unique_directed_pairs": 75126,
+    "self_loop_flows": 100,
+    "self_loop_pairs": 9,
+    "avg_degree_distinct_pairs": 31.413757056240854,
+    "avg_flows_per_node": 1183.5354380096173,
+    "density": 0.0032845835483313315,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 16.0,
+     "0.9": 22.0,
+     "0.99": 24.0,
+     "1.0": 7526.0
+    },
+    "degree_histogram_log2": [
+     0,
+     2,
+     195,
+     1972,
+     2600,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0,
+     0,
+     11
+    ]
+   },
+   "train_context": {
+    "active_nodes": 4780,
+    "flows": 1973421,
+    "unique_directed_pairs": 65165,
+    "self_loop_flows": 89,
+    "self_loop_pairs": 9,
+    "avg_degree_distinct_pairs": 27.265690376569037,
+    "avg_flows_per_node": 825.6991631799164,
+    "density": 0.0028526564528739314,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 14.0,
+     "0.9": 22.0,
+     "0.99": 24.0,
+     "1.0": 6777.0
+    },
+    "degree_histogram_log2": [
+     5,
+     49,
+     594,
+     2297,
+     1821,
+     1,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0,
+     11
+    ]
+   },
+   "neighbourhood_change": {
+    "nodes_evaluated": 19129,
+    "mean_jaccard": 0.3810924595963545,
+    "median_jaccard": 0.2857142857142857,
+    "fraction_unchanged": 0.05081290187673167
+   },
+   "label_mixing_all_flows": {
+    "pairs_with_both_benign_and_attack": 15,
+    "attack_flows_on_mixed_pairs": 557645,
+    "benign_flows_on_mixed_pairs": 47158
+   },
+   "dominant_pair": {
+    "bucket_pair_flows": 555763,
+    "attack_fraction_on_bucket_pair": 0.9997588900304626,
+    "original_dominant_flows": 555763,
+    "endpoints_sharing_attacker_bucket": 4,
+    "endpoints_sharing_victim_bucket": 4
+   }
+  },
+  "merge_factor_8": {
+   "merge_factor": 8,
+   "buckets": 2392,
+   "all_flows": {
+    "active_nodes": 2392,
+    "flows": 2830425,
+    "unique_directed_pairs": 48207,
+    "self_loop_flows": 246,
+    "self_loop_pairs": 10,
+    "avg_degree_distinct_pairs": 40.30685618729097,
+    "avg_flows_per_node": 2366.5760869565215,
+    "density": 0.008428869968065866,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 21.0,
+     "0.9": 22.0,
+     "0.99": 24.0,
+     "1.0": 4550.0
+    },
+    "degree_histogram_log2": [
+     0,
+     0,
+     1,
+     139,
+     2238,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0,
+     1,
+     10
+    ]
+   },
+   "train_context": {
+    "active_nodes": 2392,
+    "flows": 1973421,
+    "unique_directed_pairs": 44845,
+    "self_loop_flows": 207,
+    "self_loop_pairs": 10,
+    "avg_degree_distinct_pairs": 37.49581939799331,
+    "avg_flows_per_node": 1650.017558528428,
+    "density": 0.007841032914678652,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 20.0,
+     "0.9": 22.0,
+     "0.99": 24.0,
+     "1.0": 4367.0
+    },
+    "degree_histogram_log2": [
+     0,
+     0,
+     5,
+     428,
+     1945,
+     1,
+     0,
+     2,
+     0,
+     0,
+     0,
+     6,
+     5
+    ]
+   },
+   "neighbourhood_change": {
+    "nodes_evaluated": 19129,
+    "mean_jaccard": 0.30802179826152937,
+    "median_jaccard": 0.2,
+    "fraction_unchanged": 0.03152281875686131
+   },
+   "label_mixing_all_flows": {
+    "pairs_with_both_benign_and_attack": 15,
+    "attack_flows_on_mixed_pairs": 557645,
+    "benign_flows_on_mixed_pairs": 47195
+   },
+   "dominant_pair": {
+    "bucket_pair_flows": 555763,
+    "attack_fraction_on_bucket_pair": 0.9997588900304626,
+    "original_dominant_flows": 555763,
+    "endpoints_sharing_attacker_bucket": 8,
+    "endpoints_sharing_victim_bucket": 8
+   }
+  },
+  "merge_factor_16": {
+   "merge_factor": 16,
+   "buckets": 1196,
+   "all_flows": {
+    "active_nodes": 1196,
+    "flows": 2830425,
+    "unique_directed_pairs": 26304,
+    "self_loop_flows": 421,
+    "self_loop_pairs": 12,
+    "avg_degree_distinct_pairs": 43.986622073578594,
+    "avg_flows_per_node": 4733.152173913043,
+    "density": 0.01840444438225046,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 22.0,
+     "0.9": 24.0,
+     "0.99": 186.14999999999895,
+     "1.0": 2383.0
+    },
+    "degree_histogram_log2": [
+     0,
+     0,
+     0,
+     0,
+     1182,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0,
+     11
+    ]
+   },
+   "train_context": {
+    "active_nodes": 1196,
+    "flows": 1973421,
+    "unique_directed_pairs": 25787,
+    "self_loop_flows": 333,
+    "self_loop_pairs": 12,
+    "avg_degree_distinct_pairs": 43.12207357859532,
+    "avg_flows_per_node": 3300.035117056856,
+    "density": 0.018042708610290926,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 22.0,
+     "0.9": 23.0,
+     "0.99": 161.89999999999827,
+     "1.0": 2368.0
+    },
+    "degree_histogram_log2": [
+     0,
+     0,
+     0,
+     4,
+     1178,
+     1,
+     0,
+     2,
+     0,
+     0,
+     0,
+     11
+    ]
+   },
+   "neighbourhood_change": {
+    "nodes_evaluated": 19129,
+    "mean_jaccard": 0.2874940045474854,
+    "median_jaccard": 0.18181818181818182,
+    "fraction_unchanged": 0.025667834178472477
+   },
+   "label_mixing_all_flows": {
+    "pairs_with_both_benign_and_attack": 15,
+    "attack_flows_on_mixed_pairs": 557645,
+    "benign_flows_on_mixed_pairs": 47532
+   },
+   "dominant_pair": {
+    "bucket_pair_flows": 555763,
+    "attack_fraction_on_bucket_pair": 0.9997588900304626,
+    "original_dominant_flows": 555763,
+    "endpoints_sharing_attacker_bucket": 16,
+    "endpoints_sharing_victim_bucket": 16
+   }
+  },
+  "merge_factor_32": {
+   "merge_factor": 32,
+   "buckets": 598,
+   "all_flows": {
+    "active_nodes": 598,
+    "flows": 2830425,
+    "unique_directed_pairs": 13433,
+    "self_loop_flows": 1377,
+    "self_loop_pairs": 12,
+    "avg_degree_distinct_pairs": 44.92642140468227,
+    "avg_flows_per_node": 9466.304347826086,
+    "density": 0.037626818596886324,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 22.0,
+     "0.9": 24.0,
+     "0.99": 1196.0,
+     "1.0": 1196.0
+    },
+    "degree_histogram_log2": [
+     0,
+     0,
+     0,
+     0,
+     584,
+     0,
+     1,
+     2,
+     0,
+     0,
+     11
+    ]
+   },
+   "train_context": {
+    "active_nodes": 598,
+    "flows": 1973421,
+    "unique_directed_pairs": 13343,
+    "self_loop_flows": 1017,
+    "self_loop_pairs": 12,
+    "avg_degree_distinct_pairs": 44.625418060200666,
+    "avg_flows_per_node": 6600.070234113712,
+    "density": 0.0373747219934679,
+    "weakly_connected_components": 1,
+    "largest_component_fraction": 1.0,
+    "degree_quantiles": {
+     "0.5": 22.0,
+     "0.9": 24.0,
+     "0.99": 1196.0,
+     "1.0": 1196.0
+    },
+    "degree_histogram_log2": [
+     0,
+     0,
+     0,
+     0,
+     584,
+     1,
+     0,
+     2,
+     0,
+     0,
+     11
+    ]
+   },
+   "neighbourhood_change": {
+    "nodes_evaluated": 19129,
+    "mean_jaccard": 0.2773768086045254,
+    "median_jaccard": 0.18181818181818182,
+    "fraction_unchanged": 0.019760572952062315
+   },
+   "label_mixing_all_flows": {
+    "pairs_with_both_benign_and_attack": 15,
+    "attack_flows_on_mixed_pairs": 557645,
+    "benign_flows_on_mixed_pairs": 48007
+   },
+   "dominant_pair": {
+    "bucket_pair_flows": 555763,
+    "attack_fraction_on_bucket_pair": 0.9997588900304626,
+    "original_dominant_flows": 555763,
+    "endpoints_sharing_attacker_bucket": 32,
+    "endpoints_sharing_victim_bucket": 32
+   }
+  }
+ },
+ "note": "merge_factor 1 = native_identity_baseline (already contains NAT aggregation); higher levels add synthetic identity collisions (stress test, not a NAT emulator)"
+}

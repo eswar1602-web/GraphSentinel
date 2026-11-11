@@ -1,0 +1,40 @@
+# Milestones 4, 6, 7: GraphSAGE edge classification, robustness across aggregation, aggregation-aware training.
+processed_dir: data/processed/v1
+results_dir: experiments/results/gnn
+models_dir: models/graph
+device: auto                           # cuda if available
+seeds: [0, 1, 2]
+model: {hidden: 64, layers: 2, dropout: 0.2, emb_dim: 32}
+train:
+  max_epochs: 40                       # ~2.5 s/epoch on RTX 3050; a 12-epoch timing run was still improving
+  patience: 5                          # early stopping on VAL macro-F1 (native_identity_baseline, cumulative mode)
+  batch_size: 8192                     # disjoint target batches B; context C = M \ B (contract §6.2)
+  cap_per_fine_label_per_epoch: 20000  # class-capped, re-drawn each epoch (seeded)
+  lr: 0.002
+  weight_decay: 1.0e-5
+  eval_batch_size: 16384               # smaller B => C = M \ B closer to per-edge exclusion
+  class_weighting: sqrt_balanced
+aggregation:
+  seed: 2017                           # ONE shared mapping policy for all splits and paired views
+  levels: [1, 2, 4, 8, 16, 32]         # 1 = native_identity_baseline; >1 = additional synthetic aggregation
+eval_modes: [cumulative, period_only, prior_only]   # contract §6.3, reported at native_identity_baseline
+experiments:
+  - {name: primary_family_default, scheme: primary, target: family, feature_set: default,
+     variants: [identity_free, standard]}
+  - {name: primary_family_dstport, scheme: primary, target: family, feature_set: dstport,
+     variants: [identity_free, standard]}                                                    # E-PS1
+  - {name: dayholdout_binary_default, scheme: dayholdout, target: binary, feature_set: default,
+     variants: [identity_free, standard]}
+  - {name: primary_family_default_dominant_pair_ablation, scheme: primary, target: family, feature_set: default,
+     variants: [identity_free, standard], exclude_dominant_pair: true, seeds: [0]}
+aggregation_aware:                     # Milestone 7 (hypothesis; negative results reported as found)
+  base_experiment: primary_family_default
+  variant: identity_free               # per-node embeddings cannot transfer across bucket spaces
+  train_levels: [2, 4, 8]              # sampled per batch for the paired aggregated view
+  unseen_levels: [16, 32]              # never used in training
+  # L_total = L_cls(native view) + lambda1 * L_consistency(sym. KL between views) + lambda2 * L_robustness(CE on aggregated view)
+  settings:
+    - {name: robustness_only, lambda1: 0.0, lambda2: 1.0}
+    - {name: consistency_only, lambda1: 1.0, lambda2: 0.0}
+    - {name: consistency_and_robustness, lambda1: 1.0, lambda2: 1.0}
+    - {name: strong_consistency, lambda1: 3.0, lambda2: 1.0}
