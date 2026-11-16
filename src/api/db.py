@@ -23,6 +23,22 @@ SCHEMA = [
         id INTEGER PRIMARY KEY AUTOINCREMENT, created_at TEXT, filename TEXT, file_sha256 TEXT, n_flows INTEGER,
         n_scored INTEGER, n_alerts INTEGER, model TEXT, summary TEXT)""",
     """CREATE TABLE IF NOT EXISTS config (key TEXT PRIMARY KEY, value TEXT)""",
+    # Live simulation (src/simulation): runs, alerts and incidents. Simulated flows stay in a bounded in-memory
+    # buffer; alerts and incidents keep only the IDs of their supporting flows.
+    """CREATE TABLE IF NOT EXISTS sim_runs (
+        run_id TEXT PRIMARY KEY, created_at TEXT, seed INTEGER, config TEXT, status TEXT, started_at TEXT,
+        stopped_at TEXT, sim_start TEXT, sim_elapsed_s REAL, flows_generated INTEGER, flows_invalid INTEGER,
+        updated_at TEXT)""",
+    """CREATE TABLE IF NOT EXISTS sim_alerts (
+        id TEXT PRIMARY KEY, run_id TEXT, rule TEXT, source TEXT, severity TEXT, title TEXT, explanation TEXT,
+        src TEXT, dst_devices TEXT, first_seen REAL, last_seen REAL, first_seen_at TEXT, last_seen_at TEXT,
+        occurrences INTEGER, evidence TEXT, flow_ids TEXT, incident_id TEXT, created_at TEXT, updated_at TEXT)""",
+    """CREATE TABLE IF NOT EXISTS sim_incidents (
+        id TEXT PRIMARY KEY, run_id TEXT, status TEXT, severity TEXT, title TEXT, summary TEXT, actor TEXT,
+        targets TEXT, pivots TEXT, devices TEXT, rules TEXT, alert_ids TEXT, flow_ids TEXT, first_seen REAL,
+        last_seen REAL, first_seen_at TEXT, last_seen_at TEXT, created_at TEXT, updated_at TEXT, history TEXT)""",
+    "CREATE INDEX IF NOT EXISTS ix_sim_alerts_run ON sim_alerts (run_id, last_seen)",
+    "CREATE INDEX IF NOT EXISTS ix_sim_incidents_run ON sim_incidents (run_id, status)",
 ]
 
 

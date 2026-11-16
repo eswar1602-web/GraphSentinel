@@ -19,6 +19,9 @@
         │
         ▼
  FastAPI (src/api) + SQLite (experiment index, detections, audit_log) ◄── HMAC hash chain (src/cryptography)
+        ▲
+        │ /api/sim (REST + WebSocket): src/simulation (synthetic network -> flows -> live graph -> rules + XGBoost
+        │ via services.score_numeric -> alerts -> incidents -> sim_* tables + audit events)
         ▼
  React dashboard (frontend/, Vite + Plotly + Cytoscape.js), served by FastAPI from frontend/dist
 ```
@@ -35,6 +38,8 @@
 | `src/cryptography/audit_log.py` | 8 | SHA-256 chain and HMAC-SHA256, verify, tamper demo |
 | `src/api/` | 9 | FastAPI routes, detection service, SQLite, results views, sample builder |
 | `frontend/` | 9 | dashboard with 8 sections; every value is fetched from the API |
+| `src/simulation/` | live simulation | synthetic network, traffic and scenarios, CICFlowMeter-style features from synthetic packets, live graph, behavioural rules, XGBoost adapter with a compatibility check, alerts and incidents, SQLite store, engine (see [simulation.md](simulation.md)) |
+| `src/api/simulation.py` | live simulation | `/api/sim/*` REST routes and the `/api/sim/ws` WebSocket hub with bounded per-client queues |
 
 ## Design decisions made during implementation
 - **Graph size.** The CICIDS2017 graph has 19,129 endpoint nodes but 2.8M flow edges. GraphSAGE runs on the node-level

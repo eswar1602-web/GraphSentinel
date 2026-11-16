@@ -1,0 +1,51 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "app",
+  "shape": "app screen",
+  "theme": "rim",
+  "axes": "dark/grotesk-sans/warm",
+  "nav": "top bar, six destinations, simulated-network marker; menu under 72rem",
+  "footer": "one-line simulation disclaimer",
+  "hero": "none (app)",
+  "imagery": "none; the product is the topology diagram",
+  "photos": [],
+  "entry": "Network",
+  "signature": "live topology in fixed role rows; acting device and its connections turn orange",
+  "sections": [
+   "Network",
+   "Alerts",
+   "Incidents",
+   "Monitoring",
+   "File scan",
+   "Audit log"
+  ],
+  "waived": [],
+  "prompt": "security operations console for a simulated enterprise network: live topology, threat alerts, incidents and monitoring",
+  "date": "2026-11-15"
+ },
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "app",
+  "shape": "app screen",
+  "theme": "console",
+  "axes": "light/grotesk-sans/chromatic-teal",
+  "nav": "navy sidebar, menu under 60rem",
+  "signature": "NAT-pair validity reading and endpoint graph",
+  "sections": [
+   "Overview",
+   "Dataset",
+   "Detection",
+   "Graph visualization",
+   "Aggregation simulator",
+   "Model comparison",
+   "Robustness",
+   "Audit verification"
+  ],
+  "prompt": "security operations dashboard for a graph-based NIDS research project",
+  "waived": [],
+  "date": "2026-11-15"
+ }
+]

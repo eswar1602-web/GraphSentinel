@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="GraphSentinel: graph-based network intrusion detection on CICIDS2017, with identity-aggregation robustness results and a verifiable audit log." />
+    <meta name="description" content="GraphSentinel security console: a simulated enterprise network with live topology, threat alerts, incidents and a verifiable audit log." />
     <title>GraphSentinel</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <script>
-      try { var t = localStorage.getItem("graphsentinel-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
-    </script>
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <noscript>The GraphSentinel dashboard needs JavaScript to load results from the API.</noscript>
+    <noscript>The GraphSentinel console needs JavaScript: it reads the simulated network from the API and its live stream.</noscript>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/console/main.jsx"></script>
   </body>
 </html>

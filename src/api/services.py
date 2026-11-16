@@ -98,6 +98,20 @@ def parse_upload(data: bytes, filename: str) -> pd.DataFrame:
     return df
 
 
+def score_numeric(det: Detector, num: pd.DataFrame, uid: pd.Series) -> tuple[np.ndarray, pd.DataFrame]:
+    """Class probabilities for flows whose raw CICIDS2017 feature columns are in ``num`` (float64, no negative
+    Flow Duration). Applies exactly the Milestone 1 value corrections and the train-fitted transform.
+    Raises AssertionError if values fall outside the validated domain. Shared by upload and live-simulation scoring."""
+    num_c, corrections, _ = apply_feature_corrections(num.reset_index(drop=True), uid.reset_index(drop=True), FEATURE_CFG)
+    X = det.tf.transform(num_c, det.columns, "raw")
+    pr = det.model.predict_proba(X)
+    if pr.ndim == 1:
+        pr = np.stack([1 - pr, pr], 1)
+    full = np.zeros((len(X), len(det.classes)), dtype="float32")
+    full[:, np.asarray(getattr(det.model, "gs_classes", np.arange(pr.shape[1])), dtype=int)] = pr
+    return full, corrections
+
+
 def detect(data: bytes, filename: str, detector: Detector | None = None, preview: int = 200) -> dict[str, Any]:
     det = detector or Detector.load()
     df = parse_upload(data, filename)
@@ -120,16 +134,9 @@ def detect(data: bytes, filename: str, detector: Detector | None = None, preview
         sub = num.loc[ok].reset_index(drop=True)
         uid = pd.Series([f"upload:{i}" for i in np.flatnonzero(ok)])
         try:
-            num_c, corrections, _ = apply_feature_corrections(sub, uid, FEATURE_CFG)
+            proba[ok], corrections = score_numeric(det, sub, uid)
         except AssertionError as exc:
             raise UploadError(f"feature values outside the validated CICIDS2017 domain: {exc}") from exc
-        X = det.tf.transform(num_c, det.columns, "raw")
-        pr = det.model.predict_proba(X)
-        if pr.ndim == 1:
-            pr = np.stack([1 - pr, pr], 1)
-        full = np.zeros((len(X), len(det.classes)), dtype="float32")
-        full[:, np.asarray(getattr(det.model, "gs_classes", np.arange(pr.shape[1])), dtype=int)] = pr
-        proba[ok] = full
     pred = proba.argmax(1)
     names = np.array(det.classes, dtype=object)[pred]   # object dtype: fixed-width str would truncate labels
     names[invalid] = "invalid_record"

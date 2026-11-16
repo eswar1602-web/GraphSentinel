@@ -2,7 +2,8 @@
 
 Run:
     python -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000
-Serves the JSON API under /api and, if built, the React dashboard (frontend/dist) at /.
+Serves the JSON API under /api (live simulation under /api/sim, see docs/simulation.md) and, if built, the React
+dashboard (frontend/dist) at /.
 All numbers come from real result files, the processed dataset, or live computation; nothing is hard-coded.
 """
 from __future__ import annotations
@@ -18,7 +19,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from src.api import db, results, services
+from src.api import db, results, services, simulation
 from src.cryptography.audit_log import AuditLog, demo as audit_demo
 
 FRONTEND = Path("frontend/dist")
@@ -36,12 +37,14 @@ async def lifespan(app: FastAPI):
     n = db.ingest_results()
     audit().append("server_start", {"result_files_indexed": n})
     yield
+    await simulation.shutdown()          # stop a running live simulation cleanly (audited)
 
 
 app = FastAPI(title="GraphSentinel API", version="1.0", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=[o for o in os.environ.get(
     "GRAPHSENTINEL_CORS", "http://localhost:5173,http://127.0.0.1:5173").split(",") if o],
-    allow_methods=["GET", "POST"], allow_headers=["*"])
+    allow_methods=["GET", "POST", "PATCH", "DELETE"], allow_headers=["*"])
+app.include_router(simulation.router)    # live network simulation: /api/sim/* and the /api/sim/ws WebSocket
 
 
 @app.get("/api/health")

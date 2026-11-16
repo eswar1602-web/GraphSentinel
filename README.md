@@ -8,6 +8,10 @@ Status: **Milestones 1–10 are implemented and evaluated on the real dataset.**
 - Models: RF and XGBoost baselines, standard and identity-free GraphSAGE, and aggregation-aware multi-view GraphSAGE.
 - Robustness is evaluated across aggregation levels.
 - A SHA-256 + HMAC audit log, a FastAPI backend and a React dashboard are included.
+- **Live network simulation** (backend): a synthetic enterprise network with routine traffic and five attack-like
+  scenarios, a live communication graph, hybrid detection (behavioural rules plus the XGBoost model, after a feature
+  compatibility check), incidents, SQLite persistence, audit events and WebSocket streaming. See
+  [docs/simulation.md](docs/simulation.md). All traffic is synthetic: nothing is captured, sent or blocked.
 - **Results:** [reports/results/RESULTS.md](reports/results/RESULTS.md), generated from the result files.
 - **Architecture:** [docs/architecture.md](docs/architecture.md). **Audit log:** [docs/audit_log.md](docs/audit_log.md).
 
@@ -123,7 +127,16 @@ python -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000
 ```
 
 **Frontend development with hot reload:** keep uvicorn running, then run `cd frontend; npm run dev` and open
-http://localhost:5173. Vite proxies `/api` to port 8000.
+http://localhost:5173. Vite proxies `/api` (REST and the `/api/sim/ws` WebSocket) to port 8000; to use another backend, set
+`$env:GRAPHSENTINEL_API="http://127.0.0.1:8001"` first.
+
+**Dashboard pages:**
+- `/` is the security console (`frontend/src/console`), built around the live simulation. Its sections are Network
+  (live topology, simulation and scenario controls), Alerts, Incidents (with the status workflow), Monitoring,
+  File scan (CSV upload detection and history) and Audit log.
+- `/legacy.html` is the earlier dashboard (`frontend/src/main.jsx`), kept unchanged. It still has the recorded
+  CICIDS2017 traffic graph and the training-data view; its research views appear when built with
+  `$env:VITE_SHOW_RESEARCH="true"`.
 
 **Making a real upload for the Detection page:** run `python -m src.api.make_sample --file Wednesday-workingHours.pcap_ISCX.csv --n 3000`.
 It copies raw test-split rows into `data\samples\` (git-ignored).
@@ -131,6 +144,21 @@ It copies raw test-split rows into `data\samples\` (git-ignored).
 **HMAC key:** set `GRAPHSENTINEL_HMAC_KEY` (hex, ≥ 32 bytes) or `GRAPHSENTINEL_HMAC_KEY_FILE`. Otherwise
 `keys\hmac.key` is created automatically and is git-ignored. The backend database is `experiments\graphsentinel.sqlite`
 (git-ignored); it stores no raw traffic.
+
+## 6b. Live network simulation (synthetic traffic)
+
+```powershell
+python -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000      # terminal 1
+python -m src.simulation.demo --url http://127.0.0.1:8000             # terminal 2: the 10-step acceptance demo
+python -m src.simulation.evaluate                                    # headless evaluation, 3 seeds -> experiments/results/simulation/
+```
+
+- **Endpoints:** the REST API is under `/api/sim/*`, and the WebSocket is `ws://127.0.0.1:8000/api/sim/ws`.
+- **Configuration:** `configs/simulation.yaml`.
+- **More:** API examples, the WebSocket message format, measured behaviour and limitations are in
+  [docs/simulation.md](docs/simulation.md).
+- **Missing model:** if the trained XGBoost model or processed data are absent, the simulation still runs. ML detection
+  is then reported as unavailable, and no predictions are made.
 
 ## 7. Tests
 
@@ -145,18 +173,22 @@ The suite covers:
 - a synthetic end-to-end pipeline
 - baseline and GNN trainers on synthetic data
 - FastAPI integration covering upload validation, detection, audit and graph endpoints
+- live simulation: topology, packet-level feature computation (hand-checked values), flow validation, scenario
+  generation and determinism, incremental graph updates, every behavioural rule, alert merging and incident
+  correlation, ML compatibility (including the incompatible and unavailable cases), SQLite persistence, audit events,
+  bounded memory, REST endpoints and WebSockets
 - checks on the real processed data, which skip when the data is absent
 
 ## Layout
 
 ```
-configs/      preprocessing.yaml, baselines.yaml, gnn.yaml, raw_manifest_cicids2017.json
+configs/      preprocessing.yaml, baselines.yaml, gnn.yaml, simulation.yaml, raw_manifest_cicids2017.json
 data/         raw/ (read-only), processed/v1/, samples/                 (git-ignored)
 models/       traditional/, graph/                                      (git-ignored)
-src/          preprocessing, training, graph_builder, augmentation, evaluation, cryptography, api, utils
+src/          preprocessing, training, graph_builder, augmentation, evaluation, cryptography, api, simulation, utils
 frontend/     React + Vite + Plotly + Cytoscape.js dashboard
 experiments/  specs, results/ (JSON, committed), logs/ (ignored)
 reports/      data_audit/, results/RESULTS.md + figures, environment.json
-docs/         dataset_contract.md, architecture.md, audit_log.md
+docs/         dataset_contract.md, architecture.md, audit_log.md, simulation.md
 tests/        pytest suite
 ```
