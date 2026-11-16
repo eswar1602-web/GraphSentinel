@@ -1,0 +1,386 @@
+{
+ "created_at": "2026-11-15T21:47:00+00:00",
+ "seeds": [
+  2017,
+  2018,
+  2019
+ ],
+ "ml": {
+  "available": true,
+  "compatible": true,
+  "model": "models/traditional/primary_family_default/xgboost_seed0.json",
+  "reason": null,
+  "caveat": "XGBoost model trained on CICIDS2017 (experiment primary_family_default, no Destination Port). Simulated flows are synthetic and out-of-distribution: predictions are model outputs, not validated detections."
+ },
+ "python": "3.12.13",
+ "numpy": "2.5.4",
+ "normal": {
+  "2017": {
+   "sim_minutes": 20.0,
+   "flows": 7981,
+   "alerts_by_rule": {
+    "unexpected_communication": 7
+   },
+   "alerts_by_severity": {
+    "low": 7
+   },
+   "incidents": 0,
+   "ml_predicted": {
+    "Benign": 7981
+   },
+   "invalid_flows": 0
+  },
+  "2018": {
+   "sim_minutes": 20.0,
+   "flows": 7895,
+   "alerts_by_rule": {},
+   "alerts_by_severity": {},
+   "incidents": 0,
+   "ml_predicted": {
+    "Benign": 7895
+   },
+   "invalid_flows": 0
+  },
+  "2019": {
+   "sim_minutes": 20.0,
+   "flows": 7901,
+   "alerts_by_rule": {
+    "unexpected_communication": 7
+   },
+   "alerts_by_severity": {
+    "low": 7
+   },
+   "incidents": 0,
+   "ml_predicted": {
+    "Benign": 7901
+   },
+   "invalid_flows": 0
+  }
+ },
+ "scenarios": {
+  "port_scan": {
+   "2017": {
+    "attacker": "ws-07",
+    "targets": [
+     "app-01"
+    ],
+    "scenario_flows": 4111,
+    "detected": true,
+    "first_alert_rule": "port_scan",
+    "time_to_first_alert_s": 5.0,
+    "rules_fired": [
+     "port_scan",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "high",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 4111
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2018": {
+    "attacker": "ws-06",
+    "targets": [
+     "app-02"
+    ],
+    "scenario_flows": 4111,
+    "detected": true,
+    "first_alert_rule": "port_scan",
+    "time_to_first_alert_s": 5.0,
+    "rules_fired": [
+     "port_scan",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "high",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 4111
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2019": {
+    "attacker": "ws-02",
+    "targets": [
+     "app-02"
+    ],
+    "scenario_flows": 4140,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 3.134,
+    "rules_fired": [
+     "port_scan",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "high",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 4140
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   }
+  },
+  "dos": {
+   "2017": {
+    "attacker": "ws-07",
+    "targets": [
+     "app-01"
+    ],
+    "scenario_flows": 4337,
+    "detected": true,
+    "first_alert_rule": "ml_dos",
+    "time_to_first_alert_s": 5.0,
+    "rules_fired": [
+     "connection_rate",
+     "ml_dos"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 3171,
+     "DoS": 1166
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2018": {
+    "attacker": "ws-06",
+    "targets": [
+     "app-02"
+    ],
+    "scenario_flows": 4295,
+    "detected": true,
+    "first_alert_rule": "ml_dos",
+    "time_to_first_alert_s": 5.0,
+    "rules_fired": [
+     "connection_rate",
+     "ml_dos"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 3159,
+     "DoS": 1136
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2019": {
+    "attacker": "ws-02",
+    "targets": [
+     "app-02"
+    ],
+    "scenario_flows": 4333,
+    "detected": true,
+    "first_alert_rule": "ml_dos",
+    "time_to_first_alert_s": 5.0,
+    "rules_fired": [
+     "connection_rate",
+     "ml_dos"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 3212,
+     "DoS": 1121
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   }
+  },
+  "lateral_movement": {
+   "2017": {
+    "attacker": "ws-07",
+    "targets": [
+     "ws-05",
+     "ws-03",
+     "lt-03",
+     "ws-10",
+     "lt-04"
+    ],
+    "scenario_flows": 173,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 0.031,
+    "rules_fired": [
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "high",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 173
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2018": {
+    "attacker": "ws-06",
+    "targets": [
+     "ws-11",
+     "lt-03",
+     "ws-09",
+     "ws-01",
+     "ws-12"
+    ],
+    "scenario_flows": 167,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 0.065,
+    "rules_fired": [
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "high",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 167
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2019": {
+    "attacker": "ws-02",
+    "targets": [
+     "ws-09",
+     "ws-12",
+     "ws-06",
+     "lt-03",
+     "lt-05"
+    ],
+    "scenario_flows": 181,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 2.603,
+    "rules_fired": [
+     "brute_force",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "high",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 181
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   }
+  },
+  "brute_force": {
+   "2017": {
+    "attacker": "ext-07",
+    "targets": [
+     "app-01"
+    ],
+    "scenario_flows": 186,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 0.949,
+    "rules_fired": [
+     "brute_force",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 186
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2018": {
+    "attacker": "ext-07",
+    "targets": [
+     "app-02"
+    ],
+    "scenario_flows": 186,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 0.065,
+    "rules_fired": [
+     "brute_force",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 186
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2019": {
+    "attacker": "ext-07",
+    "targets": [
+     "app-02"
+    ],
+    "scenario_flows": 194,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 1.433,
+    "rules_fired": [
+     "brute_force",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 194
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   }
+  },
+  "suspicious_outbound": {
+   "2017": {
+    "attacker": "ws-07",
+    "targets": [
+     "ext-07"
+    ],
+    "scenario_flows": 48,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 0.411,
+    "rules_fired": [
+     "traffic_volume",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 47,
+     "Infiltration": 1
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2018": {
+    "attacker": "ws-06",
+    "targets": [
+     "ext-08"
+    ],
+    "scenario_flows": 54,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 2.273,
+    "rules_fired": [
+     "traffic_volume",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 54
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   },
+   "2019": {
+    "attacker": "ws-02",
+    "targets": [
+     "ext-08"
+    ],
+    "scenario_flows": 47,
+    "detected": true,
+    "first_alert_rule": "unexpected_communication",
+    "time_to_first_alert_s": 3.306,
+    "rules_fired": [
+     "traffic_volume",
+     "unexpected_communication"
+    ],
+    "incident_opened": true,
+    "incident_severity": "critical",
+    "ml_predicted_on_scenario_flows": {
+     "Benign": 47
+    },
+    "note_buffer": "scenario flows counted from the in-memory flow buffer (5,000 most recent flows)"
+   }
+  }
+ }
+}

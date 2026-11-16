@@ -22,7 +22,8 @@ def _load_cached(path: str, mtime: float) -> dict[str, Any]:
 
 def result_files(root: Path | None = None) -> list[Path]:
     root = root or RESULTS
-    return sorted(p for p in root.glob("**/*.json") if p.parent.name != "aggregation")
+    # aggregation/ (structure metrics) and simulation/ (live-simulation evaluation) are not model result files
+    return sorted(p for p in root.glob("**/*.json") if p.parent.name not in ("aggregation", "simulation"))
 
 
 def sha256(path: Path) -> str:

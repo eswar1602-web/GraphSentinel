@@ -1,0 +1,62 @@
+# GraphSentinel live-simulation configuration (synthetic traffic only).
+# Everything here is generated inside the process: no packets are captured, sent or received, and every external
+# address comes from the RFC 5737 documentation ranges (198.51.100.0/24, 203.0.113.0/24), which are never routed.
+# Values are validated by src/simulation/config.py (pydantic); unknown keys are rejected.
+
+seed: 2017
+start_time: null            # ISO-8601 UTC start of simulated time; null = wall-clock time at reset
+
+clock:
+  speed: 5.0                # simulated seconds per wall-clock second
+  tick_interval_s: 1.0      # wall-clock seconds between ticks (each tick simulates speed * tick_interval_s seconds)
+  duration_s: null          # simulated seconds after which the run completes; null = until stopped
+
+network:
+  workstations: 12
+  laptops: 6
+  app_servers: 2
+  db_servers: 1
+  dns_servers: 1
+  routers: 1
+  external_endpoints: 8
+
+traffic:
+  normal_enabled: true
+  client_sessions_per_s: 0.12     # per workstation/laptop
+  app_to_db_queries_per_s: 1.5    # per app server
+  dns_forward_per_s: 0.3          # DNS server -> external resolver
+  router_ntp_per_s: 0.02
+  admin_ssh_per_s: 0.01           # the admin workstation's routine SSH to servers
+  max_flows_per_tick: 5000
+
+detection:
+  window_s: 60.0                  # sliding window for every behavioural rule
+  baseline_warmup_s: 120.0        # communication pairs seen before this are the learned baseline
+  alert_merge_s: 120.0            # a repeat of an open alert (same rule, src, dst) within this updates it
+  port_scan_distinct_ports: 20
+  host_sweep_distinct_hosts: 8
+  conn_rate_per_s: 15.0           # flows per second from one source to one destination service
+  volume_bytes: 20000000          # bytes sent from one source to one destination within the window
+  volume_upload_ratio: 5.0        # sent / received bytes for the volume rule
+  brute_force_attempts: 12        # short sessions to one authentication service within the window
+  brute_force_max_duration_s: 5.0
+  auth_ports: [21, 22, 23, 3389, 5900, 5985]
+  admin_ports: [22, 135, 139, 445, 3389, 5985, 5986]
+  allowed_outbound_ports: [53, 80, 123, 443]
+
+ml:
+  enabled: true
+  min_confidence: 0.9
+  create_incidents: false        # ML-only alerts attach to existing incidents but do not open new ones (see docs/simulation.md)
+
+incidents:
+  correlation_window_s: 600.0
+  min_severity_to_open: medium   # lower-severity alerts join existing incidents but do not open new ones
+
+limits:
+  flow_buffer: 5000               # recent flows kept in memory
+  alert_buffer: 2000
+  incident_buffer: 500
+  evidence_flow_ids: 50           # supporting flow IDs kept per alert / incident
+  ws_queue: 500                   # per-WebSocket-client queue; oldest messages are dropped when full
+  ws_flows_per_message: 200

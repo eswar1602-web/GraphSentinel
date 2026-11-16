@@ -52,3 +52,26 @@ def synthetic_raw_dir(tmp_path: Path) -> Path:
     _write(d / "Monday-WorkingHours.pcap_ISCX.csv", mon, "utf-8")
     _write(d / "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv", thu, "cp1252", trailing_empty=3)
     return d
+
+
+@pytest.fixture(scope="session")
+def trained_detector(tmp_path_factory: pytest.TempPathFactory) -> dict:
+    """Synthetic CICIDS2017 data -> real preprocessing pipeline -> real XGBoost training (a small test model).
+    Shared by the live-simulation tests that need a genuine trained detector without the real dataset."""
+    pytest.importorskip("xgboost")
+    from src.preprocessing.pipeline import run
+    from src.training.baselines import run_experiment
+    from tests.synthetic_cicids import build_raw_dir, synthetic_config
+
+    root = tmp_path_factory.mktemp("sim_model")
+    raw = build_raw_dir(root)
+    cfg = synthetic_config(root, raw)
+    run(cfg)
+    processed = Path(cfg["paths"]["out_dir"])
+    bcfg = {"processed_dir": str(processed), "results_dir": str(root / "results" / "baselines"),
+            "models_dir": str(root / "models" / "traditional"), "seeds": [0], "train_sample": {"cap_per_fine_label": 1000},
+            "models": {"xgboost": {"grid": [{"n_estimators": 30, "max_depth": 3}], "early_stopping_rounds": 5, "device": "cpu"}}}
+    run_experiment({"name": "primary_family_default", "scheme": "primary", "target": "family", "feature_set": "default"},
+                   bcfg, ["xgboost"])
+    return {"root": root, "processed": processed,
+            "model": root / "models" / "traditional" / "primary_family_default" / "xgboost_seed0.json"}
